@@ -198,9 +198,6 @@ export default function Home() {
                   sizes="(max-width: 600px) 85vw, 25vw"
                 />
                 <div className="photo-shade" />
-                <span className="career-card-tag">
-                  <Icon name={career.icon} size={20} />
-                </span>
                 <div className="career-card-bottom">
                   <div>
                     <small>

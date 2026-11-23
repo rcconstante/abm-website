@@ -259,9 +259,6 @@ export function CareersPage() {
                   fill
                   sizes="(max-width:760px) 100vw, 45vw"
                 />
-                <span className="career-card-tag">
-                  <Icon name={career.icon} size={20} />
-                </span>
               </div>
               <div className="career-detail-body">
                 <h2>{career.title}</h2>

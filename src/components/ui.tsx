@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { studentSpotlights } from "@/lib/content";
 import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react";
@@ -237,8 +238,13 @@ export function StudentSpotlights({
               <div className="spotlight-badge">{student.achievement}</div>
               <blockquote>“{student.quote}”</blockquote>
               <div className="spotlight-author">
-                <span className="spotlight-avatar" aria-hidden="true">
-                  {student.initials}
+                <span className="spotlight-avatar">
+                  <Image
+                    src={student.photo}
+                    alt={`Portrait of ${student.name}, ${student.grade}`}
+                    width={52}
+                    height={52}
+                  />
                 </span>
                 <div>
                   <strong>{student.name}</strong>

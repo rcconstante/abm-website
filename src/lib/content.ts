@@ -510,7 +510,7 @@ export interface StudentSpotlight {
   project: string;
   quote: string;
   achievement: string;
-  initials: string;
+  photo: string;
 }
 
 export const studentSpotlights: readonly StudentSpotlight[] = [
@@ -522,7 +522,7 @@ export const studentSpotlights: readonly StudentSpotlight[] = [
     quote:
       "Running our pop-up stall at the Business Expo made every accounting and pricing lesson click. Tracking real costs, adjusting our bundle price, and reaching break-even before noon gave me the confidence to pursue BS Accountancy.",
     achievement: "Best Financial Stewardship · ABM Expo 2026",
-    initials: "MR",
+    photo: "/images/student-mikaela.jpg",
   },
   {
     id: "rafael",
@@ -532,7 +532,7 @@ export const studentSpotlights: readonly StudentSpotlight[] = [
     quote:
       "I entered Senior High shy about speaking in front of a panel. Through Marketing pitches and Practical Research defense, I learned how to back creative ideas with real customer interviews and clear numbers.",
     achievement: "1st Place Business Pitch · SHS Research Congress",
-    initials: "RM",
+    photo: "/images/student-rafael.jpg",
   },
   {
     id: "chloe",
@@ -542,7 +542,7 @@ export const studentSpotlights: readonly StudentSpotlight[] = [
     quote:
       "ABM isn’t just for math whizzes—it’s about working with people, organizing events, and solving everyday problems. The study guides and group simulations helped me discover how much I enjoy operations and HR.",
     achievement: "Outstanding Student Leader · ABM Strand",
-    initials: "CB",
+    photo: "/images/student-chloe.jpg",
   },
 ];
 

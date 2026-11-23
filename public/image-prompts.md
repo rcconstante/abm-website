@@ -12,6 +12,7 @@ Created with the built-in image generation tool on 15 November 2026. All student
 - `images/gallery-presentation.webp` — bottom-right 627 × 627 crop: classroom presentation.
 - `images/career-finance.jpg` — 4:3 editorial photo: two ABM students reviewing financial charts and budget spreadsheets on a laptop in the school library.
 - `images/career-hr.jpg` — 4:3 editorial photo: three ABM students collaborating around a sunlit classroom table during a team leadership and HR workshop.
+- `images/student-mikaela.jpg`, `images/student-rafael.jpg`, `images/student-chloe.jpg` — 1:1 illustrative Filipino senior high school student headshot portraits used in the Student Spotlights section.
 
 Original PNG generations remain in the image tool's generated-images folder. The site consumes only the workspace copies listed above. Images were visually checked for composition and content; generated sheet crops use no added replacement graphics.
 
