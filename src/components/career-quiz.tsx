@@ -2,15 +2,6 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Check,
-  RotateCcw,
-  Sparkles,
-  BookOpen,
-  Target,
-} from "lucide-react";
 import { quizQuestions, getQuizResult } from "@/lib/quiz";
 import { PageIntro, Icon, ButtonLink } from "./ui";
 
@@ -21,14 +12,17 @@ export function CareerQuiz() {
   const question = quizQuestions[step];
   const complete = step === quizQuestions.length;
   const result = complete ? getQuizResult(answers) : null;
+
   function go(next: number) {
     setStep(next);
     requestAnimationFrame(() => heading.current?.focus());
   }
+
   function restart() {
     setAnswers({});
     go(0);
   }
+
   return (
     <>
       <PageIntro
@@ -39,7 +33,7 @@ export function CareerQuiz() {
       <div className="container quiz-page">
         <aside className="quiz-sidebar">
           <span className="icon-tile">
-            <Sparkles size={25} />
+            <Icon name="Compass" size={26} />
           </span>
           <h2>There’s no wrong answer.</h2>
           <p>
@@ -47,11 +41,11 @@ export function CareerQuiz() {
             things out.
           </p>
           <div className="quiz-sidebar-item">
-            <Target size={20} />
+            <Icon name="Target" size={20} />
             <span>Follow your curiosity</span>
           </div>
           <div className="quiz-sidebar-item">
-            <BookOpen size={20} />
+            <Icon name="BookOpen" size={20} />
             <span>Explore a possible direction</span>
           </div>
           <p className="fine-print">
@@ -60,7 +54,7 @@ export function CareerQuiz() {
           </p>
           <Link href="/careers/" className="text-link">
             Explore all careers
-            <ArrowRight size={16} />
+            <Icon name="ArrowRight" size={17} />
           </Link>
         </aside>
         <section className="quiz-panel" aria-label="Career interest quiz">
@@ -113,7 +107,7 @@ export function CareerQuiz() {
                     <span>{option.text}</span>
                     <span className="option-check">
                       {answers[question.id] === option.id && (
-                        <Check size={17} />
+                        <Icon name="Check" size={14} strokeWidth={2.5} />
                       )}
                     </span>
                   </label>
@@ -125,18 +119,18 @@ export function CareerQuiz() {
                   disabled={step === 0}
                   onClick={() => go(step - 1)}
                 >
-                  <ArrowLeft size={16} />
+                  <Icon name="ArrowLeft" size={17} />
                   Back
                 </button>
                 <button
-                  className="button button-primary"
+                  className="button button-primary button-pill"
                   disabled={!answers[question.id]}
                   onClick={() => go(step + 1)}
                 >
                   {step === quizQuestions.length - 1
                     ? "See my career match"
                     : "Next question"}
-                  <ArrowRight size={16} />
+                  <Icon name="ArrowRight" size={17} />
                 </button>
               </div>
             </>
@@ -144,7 +138,7 @@ export function CareerQuiz() {
             result && (
               <div className="quiz-result" aria-live="polite">
                 <span className="result-icon">
-                  <Icon name={result.recommendation.icon} size={39} />
+                  <Icon name={result.recommendation.icon} size={38} />
                 </span>
                 <p className="eyebrow">A direction worth exploring</p>
                 <h2 ref={heading} tabIndex={-1}>
@@ -175,18 +169,21 @@ export function CareerQuiz() {
                 </div>
                 <div className="result-next">
                   <span className="icon-tile">
-                    <Icon name="GraduationCap" />
+                    <Icon name="GraduationCap" size={24} />
                   </span>
                   <div>
                     <small>A college pathway to explore</small>
                     <strong>{result.recommendation.degree}</strong>
                   </div>
                 </div>
-                <ButtonLink href={`/careers/#${result.recommendation.id}`}>
+                <ButtonLink
+                  href={`/careers/#${result.recommendation.id}`}
+                  className="button-pill"
+                >
                   Explore this pathway
                 </ButtonLink>
                 <button className="text-link restart-button" onClick={restart}>
-                  <RotateCcw size={16} />
+                  <Icon name="RotateCcw" size={17} />
                   Take the quiz again
                 </button>
               </div>

@@ -5,8 +5,8 @@ import {
   SubjectsPage,
   CareersPage,
   ResourcesPage,
-  EventsPage,
 } from "@/components/information-pages";
+import { EventsPage } from "@/components/events";
 import { Gallery } from "@/components/gallery";
 import { CareerQuiz } from "@/components/career-quiz";
 import { ContactPage } from "@/components/contact";

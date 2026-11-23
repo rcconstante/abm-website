@@ -1,35 +1,36 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import {
-  Mail,
-  MapPin,
-  ArrowUpRight,
-  Send,
-  Check,
-  Copy,
-  Download,
-  GraduationCap,
-} from "lucide-react";
 import { site } from "@/lib/site";
-import { PageIntro } from "./ui";
+import { Icon, PageIntro } from "./ui";
+
+const TOUR_TOPIC = "Request a campus tour";
 
 export function ContactPage() {
+  const [topic, setTopic] = useState("About the ABM strand");
   const [message, setMessage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
+
+  const isCampusTour = topic === TOUR_TOPIC;
+
   function invalidateInquiry() {
     setMessage(null);
     setCopied(false);
     setError("");
   }
+
   function prepare(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") || "").trim();
     const email = String(form.get("email") || "").trim();
-    const topic = String(form.get("topic") || "");
+    const role = String(form.get("role") || "Prospective Student");
+    const selectedTopic = String(form.get("topic") || topic);
+    const tourDate = String(form.get("tourDate") || "").trim();
+    const tourSlot = String(form.get("tourSlot") || "").trim();
     const inquiry = String(form.get("message") || "").trim();
+
     if (
       name.length < 2 ||
       name.length > 100 ||
@@ -43,12 +44,20 @@ export function ContactPage() {
       );
       return;
     }
+
     setError("");
     setCopied(false);
+
+    const tourLines =
+      selectedTopic === TOUR_TOPIC
+        ? `\nPreferred campus tour date: ${tourDate || "Flexible"}\nPreferred time slot: ${tourSlot || "Morning (9:00 AM – 11:00 AM)"}`
+        : "";
+
     setMessage(
-      `ABM inquiry: ${topic}\n\nName: ${name}\nReply email: ${email}\n\n${inquiry}`,
+      `ABM inquiry: ${selectedTopic}\n\nName: ${name}\nVisitor type: ${role}\nReply email: ${email}${tourLines}\n\n${inquiry}`,
     );
   }
+
   async function copyMessage() {
     if (!message) return;
     try {
@@ -58,6 +67,7 @@ export function ContactPage() {
       setError("Your browser couldn’t copy the message. Download it instead.");
     }
   }
+
   function download() {
     if (!message) return;
     const url = URL.createObjectURL(
@@ -69,12 +79,13 @@ export function ContactPage() {
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
+
   return (
     <>
       <PageIntro
         tag="Get in Touch"
         title="Your questions are welcome here."
-        text="Choosing your next step is a big decision. Start a conversation about ABM, school life, or where your interests could lead."
+        text="Choosing your next step is a big decision. Ask a question about the ABM strand, enrollment requirements, or request a guided campus tour."
       />
       <div className="container contact-layout section-space">
         <aside className="contact-info">
@@ -86,61 +97,72 @@ export function ContactPage() {
           </h2>
           <p>
             Whether you’re a future student, a parent, or simply curious, we’re
-            glad you’re exploring.
+            glad you’re exploring Westbridge Senior High.
           </p>
+
           <div className="contact-detail">
             <span className="icon-tile">
-              <GraduationCap />
+              <Icon name="GraduationCap" size={22} />
             </span>
             <div>
-              <h3>Meet your school</h3>
+              <h3>ABM Strand Office</h3>
               <p>{site.school}</p>
+              <p className="contact-subdetail">
+                {site.coordinator} · {site.coordinatorRole}
+              </p>
             </div>
           </div>
+
           <div className="contact-detail">
             <span className="icon-tile">
-              <Mail />
+              <Icon name="Mail" size={22} />
             </span>
             <div>
               <h3>Email inquiries</h3>
-              {site.email ? (
-                <a href={`mailto:${site.email}`}>{site.email}</a>
-              ) : (
-                <p>School email to be confirmed</p>
-              )}
+              <a href={`mailto:${site.email}`}>{site.email}</a>
             </div>
           </div>
+
           <div className="contact-detail">
             <span className="icon-tile">
-              <MapPin />
+              <Icon name="Phone" size={22} />
             </span>
             <div>
-              <h3>Find us</h3>
-              <p>{site.address || "Campus address to be confirmed"}</p>
+              <h3>Admissions &amp; guidance</h3>
+              <a href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}>
+                {site.phone}
+              </a>
+              <p className="contact-subdetail">{site.officeHours}</p>
             </div>
           </div>
-          {site.schoolUrl && (
-            <a
-              href={site.schoolUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link"
-            >
-              Visit the school website
-              <ArrowUpRight size={16} />
-            </a>
-          )}
+
+          <div className="contact-detail">
+            <span className="icon-tile">
+              <Icon name="MapPin" size={22} />
+            </span>
+            <div>
+              <h3>Campus address</h3>
+              <p>{site.address}</p>
+            </div>
+          </div>
+
           <div className="contact-note">
-            <strong>A note about this school project</strong>
+            <strong>Demo school profile</strong>
             <p>
-              Westbridge is an illustrative school identity. Official contact
-              details and social links will be added by the school.
+              Westbridge Senior High details shown above are illustrative mock
+              data for previewing the site. Replace them via{" "}
+              <code>.env.local</code> or <code>src/lib/site.ts</code> before
+              official launch.
             </p>
           </div>
         </aside>
+
         <section className="contact-form-panel">
           <h2>What’s on your mind?</h2>
-          <p>Tell us a little about yourself and what you’d like to know.</p>
+          <p>
+            Prospective students and parents can ask a question or schedule a
+            campus tour below.
+          </p>
           <form onSubmit={prepare} onChange={invalidateInquiry}>
             <div className="form-row">
               <label>
@@ -166,17 +188,56 @@ export function ContactPage() {
                 />
               </label>
             </div>
-            <label>
-              What would you like to ask about?
-              <select name="topic" defaultValue="About the ABM strand">
-                <option>About the ABM strand</option>
-                <option>Subjects and curriculum</option>
-                <option>College and career pathways</option>
-                <option>School activities and events</option>
-                <option>Enrollment information</option>
-                <option>Something else</option>
-              </select>
-            </label>
+
+            <div className="form-row">
+              <label>
+                I am a…
+                <select name="role" defaultValue="Prospective Student">
+                  <option>Prospective Student</option>
+                  <option>Parent / Guardian</option>
+                  <option>Teacher / Guidance Counselor</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>
+                Topic
+                <select
+                  name="topic"
+                  value={topic}
+                  onChange={(event) => {
+                    setTopic(event.target.value);
+                    invalidateInquiry();
+                  }}
+                >
+                  <option>About the ABM strand</option>
+                  <option>{TOUR_TOPIC}</option>
+                  <option>Enrollment information</option>
+                  <option>Subjects and curriculum</option>
+                  <option>College and career pathways</option>
+                  <option>School activities and events</option>
+                  <option>Something else</option>
+                </select>
+              </label>
+            </div>
+
+            {isCampusTour && (
+              <div className="tour-fields">
+                <div className="form-row">
+                  <label>
+                    Preferred visit date
+                    <input name="tourDate" type="date" />
+                  </label>
+                  <label>
+                    Preferred time slot
+                    <select name="tourSlot" defaultValue="Morning (9–11 AM)">
+                      <option>Morning (9–11 AM)</option>
+                      <option>Afternoon (1:30–3:30 PM)</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            )}
+
             <label>
               Your message<span aria-hidden="true">*</span>
               <textarea
@@ -185,59 +246,71 @@ export function ContactPage() {
                 minLength={10}
                 maxLength={3000}
                 rows={6}
-                placeholder="I’d like to know more about…"
+                placeholder={
+                  isCampusTour
+                    ? "Let us know how many visitors are coming and any specific ABM facilities or questions you’d like covered during your tour…"
+                    : "I’d like to know more about…"
+                }
               />
             </label>
             <p className="form-privacy">
-              Your message stays in your browser until you choose to share it.
-              Please leave out sensitive personal information.
+              Your message stays in your browser until you choose to open your
+              email app, copy, or download it.
             </p>
             {error && (
               <p className="form-error" role="alert">
                 {error}
               </p>
             )}
-            <button type="submit" className="button button-primary form-submit">
-              <Send size={17} />
-              Prepare my inquiry
-              <ArrowUpRight size={17} />
+            <button
+              type="submit"
+              className="button button-primary button-pill form-submit"
+            >
+              <Icon name="Send" size={18} />
+              {isCampusTour
+                ? "Prepare campus tour request"
+                : "Prepare my inquiry"}
             </button>
           </form>
+
           {message && (
             <div className="inquiry-ready" role="status">
               <h3>
-                <Check size={20} />
-                Your inquiry is ready.
+                <Icon name="Check" size={20} />
+                {isCampusTour
+                  ? "Your campus tour request is ready."
+                  : "Your inquiry is ready."}
               </h3>
               <p>
-                {site.email
-                  ? "Open your email app to review and send it to the school."
-                  : "The school’s email isn’t available yet. Copy or download your message to share when you have their contact details. This message has not been sent."}
+                Open your email app to review and send your message directly to{" "}
+                <strong>{site.email}</strong>, or copy/download it for later.
               </p>
               <div className="inquiry-actions">
-                {site.email && (
-                  <a
-                    className="button button-primary"
-                    href={`mailto:${site.email}?subject=${encodeURIComponent("ABM Strand inquiry")}&body=${encodeURIComponent(message)}`}
-                  >
-                    <Mail size={16} />
-                    Open email app
-                  </a>
-                )}
+                <a
+                  className="button button-primary button-pill"
+                  href={`mailto:${site.email}?subject=${encodeURIComponent(isCampusTour ? "Westbridge ABM Campus Tour Request" : "ABM Strand inquiry")}&body=${encodeURIComponent(message)}`}
+                >
+                  <Icon name="Mail" size={17} />
+                  Open email app
+                </a>
                 <button
                   type="button"
                   onClick={copyMessage}
-                  className="button button-secondary"
+                  className="button button-secondary button-pill"
                 >
-                  {copied ? <Check size={16} /> : <Copy size={16} />}
+                  {copied ? (
+                    <Icon name="Check" size={17} />
+                  ) : (
+                    <Icon name="Copy" size={17} />
+                  )}
                   {copied ? "Copied" : "Copy message"}
                 </button>
                 <button
                   type="button"
                   onClick={download}
-                  className="button button-secondary"
+                  className="button button-secondary button-pill"
                 >
-                  <Download size={16} />
+                  <Icon name="Download" size={17} />
                   Download
                 </button>
               </div>

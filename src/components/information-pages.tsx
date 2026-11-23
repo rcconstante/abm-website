@@ -1,26 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  Check,
-  Download,
-  CalendarDays,
-  MapPin,
-  Clock3,
-  Info,
-} from "lucide-react";
 import {
   subjects,
   careers,
-  events,
   resources,
   curriculumNote,
   faqs,
   usefulLinks,
 } from "@/lib/content";
-import { PageIntro, SectionHeading, Icon, QuizCallout, ButtonLink } from "./ui";
+import {
+  PageIntro,
+  SectionHeading,
+  Icon,
+  QuizCallout,
+  ButtonLink,
+  StudentSpotlights,
+} from "./ui";
 
 export function AboutPage() {
   return (
@@ -40,7 +34,7 @@ export function AboutPage() {
               sizes="(max-width: 760px) 100vw, 45vw"
             />
             <span>
-              <BookOpen size={21} />
+              <Icon name="BookOpen" size={20} />
               Learn it. Try it. Make it yours.
             </span>
           </div>
@@ -62,11 +56,13 @@ export function AboutPage() {
               curiosity, a willingness to learn, and the confidence to ask
               questions.
             </p>
-            <ButtonLink href="/subjects/">Explore what you’ll learn</ButtonLink>
+            <ButtonLink href="/subjects/" className="button-pill">
+              Explore what you’ll learn
+            </ButtonLink>
           </div>
         </div>
         <div className="note">
-          <Info size={19} />
+          <Icon name="Info" size={20} />
           <p>{curriculumNote}</p>
         </div>
         <section className="section-space">
@@ -94,7 +90,7 @@ export function AboutPage() {
             ].map((item) => (
               <article className="detail-card" key={item.title}>
                 <span className="icon-tile">
-                  <Icon name={item.icon} />
+                  <Icon name={item.icon} size={24} />
                 </span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -119,12 +115,13 @@ export function AboutPage() {
               "You have an idea and wonder how to bring it to life.",
             ].map((text) => (
               <li key={text}>
-                <Check size={19} />
+                <Icon name="Check" size={19} />
                 {text}
               </li>
             ))}
           </ul>
         </section>
+        <StudentSpotlights compact />
         <QuizCallout />
       </div>
     </>
@@ -141,7 +138,7 @@ export function SubjectsPage() {
       />
       <div className="container section-space">
         <div className="note">
-          <Info size={19} />
+          <Icon name="Info" size={20} />
           <p>{curriculumNote}</p>
         </div>
         <nav
@@ -155,7 +152,7 @@ export function SubjectsPage() {
               key={category}
             >
               {category} subjects
-              <ArrowRight size={15} />
+              <Icon name="ArrowRight" size={16} />
             </a>
           ))}
         </nav>
@@ -185,14 +182,14 @@ export function SubjectsPage() {
                     key={subject.id}
                   >
                     <span className="icon-tile">
-                      <Icon name={subject.icon} />
+                      <Icon name={subject.icon} size={24} />
                     </span>
                     <h3>{subject.title}</h3>
                     <p>{subject.description}</p>
                     <ul className="topic-list">
                       {subject.topics.map((topic) => (
                         <li key={topic}>
-                          <Check size={14} />
+                          <Icon name="Check" size={16} />
                           {topic}
                         </li>
                       ))}
@@ -263,14 +260,14 @@ export function CareersPage() {
                   sizes="(max-width:760px) 100vw, 45vw"
                 />
                 <span className="career-card-tag">
-                  <Icon name={career.icon} />
+                  <Icon name={career.icon} size={20} />
                 </span>
               </div>
               <div className="career-detail-body">
                 <h2>{career.title}</h2>
                 <p>{career.description}</p>
                 <div className="degree">
-                  <GraduationIcon />
+                  <Icon name="GraduationCap" size={26} />
                   <div>
                     <small>College pathway to explore</small>
                     <strong>{career.degree}</strong>
@@ -289,7 +286,7 @@ export function CareersPage() {
           ))}
         </div>
         <div className="note">
-          <Info size={19} />
+          <Icon name="Info" size={20} />
           <p>
             These are possible pathways, not guaranteed outcomes. Entry
             requirements vary by college; some professions require additional
@@ -300,10 +297,6 @@ export function CareersPage() {
       </div>
     </>
   );
-}
-
-function GraduationIcon() {
-  return <Icon name="GraduationCap" size={25} />;
 }
 
 export function ResourcesPage() {
@@ -323,7 +316,7 @@ export function ResourcesPage() {
           {resources.map((resource) => (
             <article className="resource-card" key={resource.id}>
               <span className="icon-tile">
-                <BookOpen />
+                <Icon name="BookOpen" size={24} />
               </span>
               <div>
                 <span className="resource-format">
@@ -337,7 +330,7 @@ export function ResourcesPage() {
                   className="text-link"
                 >
                   Download resource
-                  <Download size={16} />
+                  <Icon name="Download" size={17} />
                 </a>
               </div>
             </article>
@@ -361,7 +354,7 @@ export function ResourcesPage() {
               },
             ].map((tip) => (
               <article className="study-tip" key={tip.title}>
-                <Icon name="Lightbulb" />
+                <Icon name="Lightbulb" size={24} />
                 <h3>{tip.title}</h3>
                 <p>{tip.text}</p>
               </article>
@@ -386,7 +379,7 @@ export function ResourcesPage() {
                   <h3>{link.title}</h3>
                   <p>{link.description}</p>
                 </div>
-                <ArrowUpRight size={22} />
+                <Icon name="ArrowUpRight" size={22} />
               </a>
             ))}
           </div>
@@ -408,92 +401,6 @@ export function ResourcesPage() {
             ))}
           </div>
         </section>
-      </div>
-    </>
-  );
-}
-
-export function EventsPage() {
-  return (
-    <>
-      <PageIntro
-        tag="Events & Updates"
-        title="Step out. Show up. Get inspired."
-        text="From your first business pitch to a new idea shared with friends, learning happens well beyond your desk."
-      />
-      <div className="container section-space">
-        <div className="note">
-          <CalendarDays size={20} />
-          <p>
-            This is an illustrative school activity calendar. Dates, locations,
-            and activities are examples and must be confirmed by your school
-            before attending.
-          </p>
-        </div>
-        <div className="events-list">
-          {events.map((event) => (
-            <article className="event-detail" id={event.id} key={event.id}>
-              <div className="event-large-date">
-                <span>
-                  {new Date(event.date + "T12:00:00Z").toLocaleDateString(
-                    "en",
-                    { month: "short", timeZone: "UTC" },
-                  )}
-                </span>
-                <strong>
-                  {new Date(event.date + "T12:00:00Z").getUTCDate()}
-                </strong>
-                <small>{event.date.slice(0, 4)}</small>
-              </div>
-              <div className="event-detail-body">
-                <span className="resource-format">
-                  {event.category}
-                  <span className="sample-tag">Illustrative event</span>
-                </span>
-                <h2>{event.title}</h2>
-                <p>{event.description}</p>
-                <div className="event-meta">
-                  <span>
-                    <Clock3 size={16} />
-                    {event.time}
-                  </span>
-                  <span>
-                    <MapPin size={16} />
-                    {event.location}
-                  </span>
-                </div>
-                <details>
-                  <summary>
-                    What to expect
-                    <ArrowRight size={16} />
-                  </summary>
-                  <ul>
-                    {event.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
-                  <Link href="/contact/" className="text-link">
-                    Ask about this activity
-                    <ArrowUpRight size={16} />
-                  </Link>
-                </details>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="announcement">
-          <Icon name="Megaphone" size={32} />
-          <div>
-            <h2>Planning your next school year?</h2>
-            <p>
-              Enrollment schedules depend on your school. Contact the admissions
-              or guidance office for confirmed dates and requirements.
-            </p>
-          </div>
-          <ButtonLink href="/contact/" variant="secondary">
-            Get in touch
-          </ButtonLink>
-        </div>
       </div>
     </>
   );

@@ -1,74 +1,118 @@
 import Link from "next/link";
+import { studentSpotlights } from "@/lib/content";
+import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react";
 import {
-  ArrowRight,
-  BookOpen,
-  Calculator,
-  ChartNoAxesCombined,
-  BriefcaseBusiness,
-  Coins,
-  UsersRound,
-  Lightbulb,
-  Scale,
-  Monitor,
-  GraduationCap,
-  Target,
-  HeartHandshake,
-  Megaphone,
-  Landmark,
-  Sigma,
-  Store,
-  Search,
-  MessagesSquare,
-  ChartColumn,
-  type LucideIcon,
-} from "lucide-react";
+  ArrowRight02Icon,
+  ArrowLeft02Icon,
+  ArrowUpRight01Icon,
+  ArrowRight01Icon,
+  BookOpen01Icon,
+  Calculator01Icon,
+  ChartIncreaseIcon,
+  Briefcase01Icon,
+  Coins01Icon,
+  UserGroupIcon,
+  Idea01Icon,
+  BalanceScaleIcon,
+  ComputerIcon,
+  GraduationCapIcon,
+  Target02Icon,
+  Agreement02Icon,
+  Megaphone01Icon,
+  BankIcon,
+  SigmaIcon,
+  Store01Icon,
+  Search01Icon,
+  MessageMultiple01Icon,
+  BarChartIcon,
+  Calendar03Icon,
+  Download04Icon,
+  Tick02Icon,
+  Cancel01Icon,
+  Menu01Icon,
+  Mail01Icon,
+  Location01Icon,
+  SentIcon,
+  Copy01Icon,
+  ArrowExpand01Icon,
+  RefreshIcon,
+  Clock01Icon,
+  InformationCircleIcon,
+  Call02Icon,
+  Globe02Icon,
+  Compass01Icon,
+} from "@hugeicons/core-free-icons";
 import type { ReactNode } from "react";
 
-const icons: Record<string, LucideIcon> = {
-  BookOpen,
-  Calculator,
-  ChartNoAxesCombined,
-  TrendingUp: ChartNoAxesCombined,
-  Briefcase: BriefcaseBusiness,
-  BriefcaseBusiness,
-  Coins,
-  Users: UsersRound,
-  UsersRound,
-  Lightbulb,
-  Scale,
-  Monitor,
-  GraduationCap,
-  Target,
-  HeartHandshake,
-  Megaphone,
-  Landmark,
-  Sigma,
-  Store,
-  Search,
-  MessagesSquare,
-  ChartColumn,
-  PiggyBank: Coins,
-  Building2: BriefcaseBusiness,
-  Handshake: HeartHandshake,
-  ChartColumnIncreasing: ChartNoAxesCombined,
+const icons: Record<string, IconSvgElement> = {
+  ArrowRight: ArrowRight02Icon,
+  ArrowLeft: ArrowLeft02Icon,
+  ArrowUpRight: ArrowUpRight01Icon,
+  ChevronRight: ArrowRight01Icon,
+  BookOpen: BookOpen01Icon,
+  Calculator: Calculator01Icon,
+  ChartNoAxesCombined: ChartIncreaseIcon,
+  TrendingUp: ChartIncreaseIcon,
+  Briefcase: Briefcase01Icon,
+  BriefcaseBusiness: Briefcase01Icon,
+  Coins: Coins01Icon,
+  Users: UserGroupIcon,
+  UsersRound: UserGroupIcon,
+  Lightbulb: Idea01Icon,
+  Scale: BalanceScaleIcon,
+  Monitor: ComputerIcon,
+  GraduationCap: GraduationCapIcon,
+  Target: Target02Icon,
+  HeartHandshake: Agreement02Icon,
+  Megaphone: Megaphone01Icon,
+  Landmark: BankIcon,
+  Sigma: SigmaIcon,
+  Store: Store01Icon,
+  Search: Search01Icon,
+  MessagesSquare: MessageMultiple01Icon,
+  ChartColumn: BarChartIcon,
+  PiggyBank: Coins01Icon,
+  Building2: Briefcase01Icon,
+  Handshake: Agreement02Icon,
+  ChartColumnIncreasing: ChartIncreaseIcon,
+  CalendarDays: Calendar03Icon,
+  Download: Download04Icon,
+  Check: Tick02Icon,
+  X: Cancel01Icon,
+  Menu: Menu01Icon,
+  Mail: Mail01Icon,
+  MapPin: Location01Icon,
+  Send: SentIcon,
+  Copy: Copy01Icon,
+  Expand: ArrowExpand01Icon,
+  RotateCcw: RefreshIcon,
+  Clock3: Clock01Icon,
+  Info: InformationCircleIcon,
+  Phone: Call02Icon,
+  Globe: Globe02Icon,
+  Compass: Compass01Icon,
 };
 
 export function Icon({
   name,
-  size = 24,
+  size = 22,
+  strokeWidth = 1.75,
   className = "",
 }: {
   name: string;
   size?: number;
+  strokeWidth?: number;
   className?: string;
 }) {
-  const Component = icons[name] || BookOpen;
+  const icon = icons[name] || BookOpen01Icon;
   return (
-    <Component
+    <HugeiconsIcon
+      icon={icon}
       size={size}
+      strokeWidth={strokeWidth}
+      color="currentColor"
       className={className}
       aria-hidden="true"
-      strokeWidth={1.7}
     />
   );
 }
@@ -89,7 +133,7 @@ export function ButtonLink({
   return (
     <Link href={href} className={`button button-${variant} ${className}`}>
       {children}
-      {arrow && <ArrowRight size={16} aria-hidden="true" />}
+      {arrow && <Icon name="ArrowRight" size={18} />}
     </Link>
   );
 }
@@ -117,7 +161,7 @@ export function SectionHeading({
       {href && (
         <Link className="text-link" href={href}>
           {linkLabel || "Explore more"}
-          <ArrowRight size={16} aria-hidden="true" />
+          <Icon name="ArrowRight" size={17} />
         </Link>
       )}
     </div>
@@ -156,16 +200,57 @@ export function QuizCallout() {
   return (
     <section className="quiz-callout">
       <div className="quiz-callout-icon">
-        <Target size={44} strokeWidth={1.2} aria-hidden="true" />
+        <Icon name="Target" size={38} strokeWidth={1.5} />
       </div>
       <div>
         <p className="eyebrow">A little curiosity. A world of possibilities.</p>
         <h2>Your next chapter starts with you.</h2>
         <p>Discover a business career that connects with what you love.</p>
       </div>
-      <ButtonLink href="/quiz/" variant="light">
+      <ButtonLink href="/quiz/" variant="light" className="button-pill">
         Find my career match
       </ButtonLink>
+    </section>
+  );
+}
+
+export function StudentSpotlights({
+  compact = false,
+}: {
+  compact?: boolean;
+}) {
+  return (
+    <section
+      className={`spotlights-section ${compact ? "spotlights-compact" : "section-space"}`}
+    >
+      <div className={compact ? "" : "container"}>
+        <SectionHeading
+          eyebrow="Student success & spotlights"
+          title="Voices from the ABM Strand."
+          text="Hear how Westbridge ABM learners turn classroom lessons into pop-up ventures, research defenses, and leadership skills."
+          href="/gallery/#student-work"
+          linkLabel="Explore student work"
+        />
+        <div className="three-grid spotlights-grid">
+          {studentSpotlights.map((student) => (
+            <article className="spotlight-card" key={student.id}>
+              <div className="spotlight-badge">{student.achievement}</div>
+              <blockquote>“{student.quote}”</blockquote>
+              <div className="spotlight-author">
+                <span className="spotlight-avatar" aria-hidden="true">
+                  {student.initials}
+                </span>
+                <div>
+                  <strong>{student.name}</strong>
+                  <small>
+                    {student.grade} · {student.project}
+                  </small>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

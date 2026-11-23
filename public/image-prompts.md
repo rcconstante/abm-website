@@ -10,6 +10,8 @@ Created with the built-in image generation tool on 15 November 2026. All student
 - `images/gallery-accounting.webp` — top-right 627 × 627 crop: accounting practice.
 - `images/gallery-team.webp` — bottom-left 627 × 627 crop: collaborative business analysis.
 - `images/gallery-presentation.webp` — bottom-right 627 × 627 crop: classroom presentation.
+- `images/career-finance.jpg` — 4:3 editorial photo: two ABM students reviewing financial charts and budget spreadsheets on a laptop in the school library.
+- `images/career-hr.jpg` — 4:3 editorial photo: three ABM students collaborating around a sunlit classroom table during a team leadership and HR workshop.
 
 Original PNG generations remain in the image tool's generated-images folder. The site consumes only the workspace copies listed above. Images were visually checked for composition and content; generated sheet crops use no added replacement graphics.
 

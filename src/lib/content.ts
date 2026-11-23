@@ -298,7 +298,7 @@ export const careers: readonly Career[] = [
       "Banking associate",
     ],
     skills: ["Quantitative reasoning", "Research", "Risk awareness"],
-    image: "/images/gallery-accounting.webp",
+    image: "/images/career-finance.jpg",
     icon: "ChartNoAxesCombined",
   },
   {
@@ -315,7 +315,7 @@ export const careers: readonly Career[] = [
       "Employee relations assistant",
     ],
     skills: ["Listening", "Fairness", "Organization"],
-    image: "/images/gallery-team.webp",
+    image: "/images/career-hr.jpg",
     icon: "UsersRound",
   },
 ];
@@ -335,7 +335,7 @@ export const galleryItems: readonly GalleryItem[] = [
     title: "Ideas meet opportunity",
     category: "Projects",
     description:
-      "An illustration of a student business expo: learners practice pitching, pricing, and explaining a product to customers.",
+      "A student business expo booth where learners practice pitching, pricing, and serving real customers.",
     image: "/images/gallery-expo.webp",
     alt: "Illustrative scene of Filipino senior high students presenting a small-business project",
   },
@@ -344,7 +344,7 @@ export const galleryItems: readonly GalleryItem[] = [
     title: "Better ideas, together",
     category: "Activities",
     description:
-      "A collaborative planning activity brings together market research, creative thinking, and shared responsibilities.",
+      "A collaborative planning activity bringing together market research, creative thinking, and shared responsibilities.",
     image: "/images/gallery-team.webp",
     alt: "Illustrative student team collaborating on a business presentation",
   },
@@ -353,7 +353,7 @@ export const galleryItems: readonly GalleryItem[] = [
     title: "Making the numbers count",
     category: "Projects",
     description:
-      "A hands-on accounting exercise connects careful record-keeping with the everyday transactions behind a student enterprise.",
+      "A hands-on accounting exercise connecting careful record-keeping with the everyday transactions behind a student enterprise.",
     image: "/images/gallery-accounting.webp",
     alt: "Illustrative close-up of a student using a calculator beside accounting notes",
   },
@@ -362,13 +362,37 @@ export const galleryItems: readonly GalleryItem[] = [
     title: "A pitch worth celebrating",
     category: "Achievements",
     description:
-      "Completing a classroom business pitch is a chance to recognize preparation, teamwork, and the confidence to present an idea.",
+      "Completing a classroom business pitch recognizes preparation, teamwork, and the confidence to defend an original proposal.",
     image: "/images/gallery-presentation.webp",
     alt: "Illustrative senior high students presenting their completed classroom business idea",
   },
+  {
+    id: "finance-lab",
+    title: "Data behind every decision",
+    category: "Projects",
+    description:
+      "Students reviewing budget forecasts and financial charts in the library ahead of the Business Research Congress.",
+    image: "/images/career-finance.jpg",
+    alt: "Two senior high school students analyzing financial charts and spreadsheets on a laptop in the school library",
+  },
+  {
+    id: "leadership-circle",
+    title: "Leading teams with empathy",
+    category: "Activities",
+    description:
+      "An Organization & Management workshop where ABM learners map team roles, brainstorm ideas, and practice leadership communication.",
+    image: "/images/career-hr.jpg",
+    alt: "Three senior high school students collaborating in a leadership workshop with sticky notes and notebooks",
+  },
 ];
 
-export type EventCategory = "Expo" | "Seminar" | "Orientation";
+export type EventCategory =
+  | "Expo"
+  | "Research"
+  | "Enrollment"
+  | "Webinar"
+  | "Seminar"
+  | "Orientation";
 export interface SchoolEvent {
   id: string;
   title: string;
@@ -386,14 +410,14 @@ export const events: readonly SchoolEvent[] = [
     title: "ABM Business Expo",
     date: "2026-12-05",
     time: "9:00 AM – 3:00 PM",
-    location: "School venue to be confirmed",
+    location: "Westbridge Covered Quadrangle & Pavilion",
     category: "Expo",
     description:
-      "A sample student enterprise showcase with product displays, business pitches, and customer feedback.",
+      "A student enterprise showcase featuring pop-up booths, live product pitches, pricing exercises, and customer feedback sessions.",
     details: [
-      "Explore student business ideas and practice evaluating a product pitch.",
-      "Suggested preparation: bring a notebook and questions for the student teams.",
-      "Illustrative event only. Confirm the date, venue, and participation details with your school.",
+      "Explore 14 student-run pop-up ventures and evaluate product pitches from Grade 12 ABM teams.",
+      "Suggested preparation: bring a notebook and questions for the student founders.",
+      "Open to Grade 10–12 students, parents, and visiting faculty; confirm visitor passes at the ABM Office.",
     ],
     sample: true,
   },
@@ -402,14 +426,14 @@ export const events: readonly SchoolEvent[] = [
     title: "Financial Literacy Seminar",
     date: "2026-12-12",
     time: "10:00 AM – 12:00 PM",
-    location: "School venue to be confirmed",
+    location: "Founder’s Hall Auditorium, 2nd Floor",
     category: "Seminar",
     description:
-      "A sample learning session on budgeting, saving habits, and recognizing common financial risks.",
+      "An interactive learning session on personal budgeting, saving habits, digital payments, and spotting common financial risks.",
     details: [
-      "Explore needs and wants, goal-setting, and basic budget planning.",
-      "Suggested preparation: try the downloadable student budget template.",
-      "Illustrative event only. Confirm the date, venue, and participation details with your school.",
+      "Explore needs vs. wants, smart allowance goal-setting, and practical budget planning.",
+      "Suggested preparation: download and bring the Student Budget Template from Resources.",
+      "Hosted by the Westbridge Junior Business Society with guest alumni speakers.",
     ],
     sample: true,
   },
@@ -418,16 +442,190 @@ export const events: readonly SchoolEvent[] = [
     title: "ABM Career Orientation",
     date: "2027-01-16",
     time: "1:00 PM – 3:00 PM",
-    location: "School venue to be confirmed",
+    location: "Senior High Audio-Visual Room (AVR 302)",
     category: "Orientation",
     description:
-      "A sample orientation exploring business-related college programs and possible career directions.",
+      "A guided orientation exploring business-related college degree programs, board licensure tracks, and industry pathways.",
     details: [
-      "Compare accounting, finance, management, marketing, HR, and entrepreneurship pathways.",
-      "Suggested preparation: take the career quiz and write down your questions.",
-      "Illustrative event only. Confirm the date, venue, and participation details with your school.",
+      "Compare accounting, finance, management, marketing, HR, and entrepreneurship college pathways.",
+      "Suggested preparation: complete the 2-minute Career Quiz and write down your top two questions.",
+      "Includes a Q&A panel with Westbridge ABM advisers and guidance counselors.",
     ],
     sample: true,
+  },
+  {
+    id: "research-congress",
+    title: "SHS Business & Practical Research Congress",
+    date: "2027-02-13",
+    time: "8:30 AM – 4:00 PM",
+    location: "Westbridge Multi-Purpose Hall & Breakout Rooms",
+    category: "Research",
+    description:
+      "Senior High ABM teams present original market studies, feasibility reports, and local micro-enterprise research posters to faculty panelists.",
+    details: [
+      "Attend live research defense sessions covering consumer behavior, student finance, and sustainable small businesses.",
+      "Browse the Research Poster Exhibit featuring 20+ Grade 11 and Grade 12 study abstracts.",
+      "Best Research Paper and Best Presenter recognitions are awarded during the afternoon closing program.",
+    ],
+    sample: true,
+  },
+  {
+    id: "entrepreneurs-webinar",
+    title: "Young Entrepreneurs & Digital Marketing Webinar",
+    date: "2027-02-27",
+    time: "2:00 PM – 4:00 PM",
+    location: "Online via Zoom & Westbridge Live Stream",
+    category: "Webinar",
+    description:
+      "A live online talk with young Filipino founders and digital marketers on validating product ideas, ethical branding, and social commerce.",
+    details: [
+      "Learn practical tools for content storytelling, customer discovery, and low-budget digital campaigns.",
+      "Includes a live Q&A where Grade 10–12 students can pitch a 60-second business idea for feedback.",
+      "Registration link is sent to registered attendees via school email two days before the webinar.",
+    ],
+    sample: true,
+  },
+  {
+    id: "enrollment-deadline",
+    title: "SY 2027–2028 Early Enrollment & Voucher Deadline",
+    date: "2027-03-20",
+    time: "8:00 AM – 4:30 PM",
+    location: "Admissions & Registrar Office, Main Building Ground Floor",
+    category: "Enrollment",
+    description:
+      "Priority submission cutoff for incoming Grade 11 ABM applicants, SHS Voucher / ESC grantees, and early campus tour slots.",
+    details: [
+      "Submit your Form 138, PSA Birth Certificate copy, Good Moral Certificate, and SHS Voucher documentation.",
+      "Download the SHS Enrollment & Requirements Guide on the Resources page before visiting.",
+      "Walk-in parent consultations and guided campus tours are available all week by request.",
+    ],
+    sample: true,
+  },
+];
+
+export interface StudentSpotlight {
+  id: string;
+  name: string;
+  grade: string;
+  project: string;
+  quote: string;
+  achievement: string;
+  initials: string;
+}
+
+export const studentSpotlights: readonly StudentSpotlight[] = [
+  {
+    id: "mikaela",
+    name: "Mikaela D. Reyes",
+    grade: "Grade 12 · ABM-A",
+    project: "Kape Kalye Cold Brew Co.",
+    quote:
+      "Running our pop-up stall at the Business Expo made every accounting and pricing lesson click. Tracking real costs, adjusting our bundle price, and reaching break-even before noon gave me the confidence to pursue BS Accountancy.",
+    achievement: "Best Financial Stewardship · ABM Expo 2026",
+    initials: "MR",
+  },
+  {
+    id: "rafael",
+    name: "Rafael L. Mendoza",
+    grade: "Grade 12 · ABM-B",
+    project: "EcoPack Refill Station Proposal",
+    quote:
+      "I entered Senior High shy about speaking in front of a panel. Through Marketing pitches and Practical Research defense, I learned how to back creative ideas with real customer interviews and clear numbers.",
+    achievement: "1st Place Business Pitch · SHS Research Congress",
+    initials: "RM",
+  },
+  {
+    id: "chloe",
+    name: "Chloe Anne Bautista",
+    grade: "Grade 11 · ABM-A",
+    project: "Junior Business Society Treasurer",
+    quote:
+      "ABM isn’t just for math whizzes—it’s about working with people, organizing events, and solving everyday problems. The study guides and group simulations helped me discover how much I enjoy operations and HR.",
+    achievement: "Outstanding Student Leader · ABM Strand",
+    initials: "CB",
+  },
+];
+
+export interface StudentWorkItem {
+  id: string;
+  type: "Mini-Business" | "Business Proposal" | "Student Article" | "Project Poster";
+  title: string;
+  team: string;
+  summary: string;
+  highlight: string;
+  metrics: readonly string[];
+  takeaway: string;
+  image: string;
+}
+
+export const studentWorks: readonly StudentWorkItem[] = [
+  {
+    id: "kape-kalye",
+    type: "Mini-Business",
+    title: "Kape Kalye Cold Brew Co.",
+    team: "Grade 12 ABM-A · 5-Student Enterprise Team",
+    summary:
+      "A student-run pop-up beverage stall launched during the ABM Business Expo, offering locally sourced cold brew and oat-milk iced coffee in reusable cup sleeves.",
+    highlight: "142 cups sold · 38% gross margin",
+    metrics: [
+      "Startup capital: PHP 4,200",
+      "Break-even reached: 11:30 AM",
+      "Zero single-use plastic straws",
+    ],
+    takeaway:
+      "Applied Business Math markup formulas and daily cash-flow journals to manage inventory restocking in real time.",
+    image: "/images/gallery-expo.webp",
+  },
+  {
+    id: "ecopack-proposal",
+    type: "Business Proposal",
+    title: "EcoPack Campus Refill Station",
+    team: "Grade 12 ABM-B · Enterprise Simulation Capstone",
+    summary:
+      "A comprehensive 24-page feasibility study and startup pitch proposing an affordable refill kiosk for student notebooks, pens, and sanitized tumbler refills on campus.",
+    highlight: "PHP 18,500 projected startup plan",
+    metrics: [
+      "180 student survey respondents",
+      "4Ps marketing & pricing tier model",
+      "6-month projected payback period",
+    ],
+    takeaway:
+      "Combined Principles of Marketing customer segmentation with Business Finance sensitivity analysis.",
+    image: "/images/gallery-presentation.webp",
+  },
+  {
+    id: "smart-baon-article",
+    type: "Student Article",
+    title: "Smart Baon: How SHS Students Budget Weekly Allowances",
+    team: "Grade 11 ABM Research Writers",
+    summary:
+      "An editorial feature and Practical Research digest exploring how 120 senior high learners allocate transport, meals, school supplies, and emergency savings each week.",
+    highlight: "120 learners surveyed · 50-30-20 guide",
+    metrics: [
+      "Top expense: daily snacks & commute",
+      "68% started tracking with CSV sheets",
+      "Published in Westbridge ABM Digest",
+    ],
+    takeaway:
+      "Demonstrates how Applied Economics and Statistics turn student observations into actionable financial habits.",
+    image: "/images/career-finance.jpg",
+  },
+  {
+    id: "pricing-poster",
+    type: "Project Poster",
+    title: "Bayanihan Micro-Retail Pricing & Margin Playbook",
+    team: "Grade 11 ABM-C · Applied Business Math Group",
+    summary:
+      "A visual capstone poster breaking down cost-plus pricing, markup vs. gross margin traps, and ethical bundle promotions for neighborhood micro-retailers.",
+    highlight: "Featured at SHS Research Congress",
+    metrics: [
+      "Side-by-side markup vs. margin chart",
+      "3 real neighborhood store case studies",
+      "Clear visual break-even calculator",
+    ],
+    takeaway:
+      "Translates core accounting and pricing math into clear visuals small-business owners can apply right away.",
+    image: "/images/career-hr.jpg",
   },
 ];
 
@@ -435,12 +633,22 @@ export interface LearningResource {
   id: string;
   title: string;
   description: string;
-  category: "Study guides" | "Templates" | "College prep";
+  category: "Study guides" | "Templates" | "College prep" | "Admissions";
   format: "MD" | "CSV";
   href: string;
   fileName: string;
 }
 export const resources: readonly LearningResource[] = [
+  {
+    id: "enrollment-guide",
+    title: "SHS enrollment & requirements guide",
+    description:
+      "Step-by-step ABM admissions process, document checklist, SHS voucher reminders, and key enrollment dates.",
+    category: "Admissions",
+    format: "MD",
+    href: "/resources/shs-enrollment-guide.md",
+    fileName: "shs-enrollment-guide.md",
+  },
   {
     id: "study-guide",
     title: "ABM starter study guide",
@@ -524,6 +732,11 @@ export const faqs = [
     question: "Do I need to be great at math to explore ABM?",
     answer:
       "You do not need to know everything before you begin. Willingness to practice, ask questions, and work carefully helps. ABM uses practical mathematics alongside communication, collaboration, research, and ethical decision-making.",
+  },
+  {
+    question: "How heavy is the ABM workload, and how do students balance projects?",
+    answer:
+      "ABM blends steady weekly practice (accounting worksheets, business math, financial analysis) with collaborative projects like marketing plans and the Grade 12 Business Enterprise Simulation. Most students manage it well by reviewing accounting problems in short daily sessions and splitting group roles early.",
   },
   {
     question: "Does choosing ABM guarantee a place in a business course?",

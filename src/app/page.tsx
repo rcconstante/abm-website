@@ -1,21 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  GraduationCap,
-  Sparkles,
-  Target,
-  ChartNoAxesCombined,
-  UsersRound,
-  Lightbulb,
-  CalendarDays,
-  Download,
-  ChevronRight,
-  Check,
-} from "lucide-react";
-import { ButtonLink, Icon, SectionHeading } from "@/components/ui";
+  ButtonLink,
+  Icon,
+  SectionHeading,
+  StudentSpotlights,
+} from "@/components/ui";
 import {
   subjects,
   careers,
@@ -39,10 +29,6 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="container hero-inner">
           <div className="hero-content">
-            <p className="hero-pill">
-              <span />
-              Your future starts here
-            </p>
             <div className="hero-title">
               <h1>
                 Think big.
@@ -58,51 +44,59 @@ export default function Home() {
               create, and make your mark in the world of business.
             </p>
             <div className="hero-actions">
-              <ButtonLink href="/about/" variant="light">
+              <ButtonLink href="/about/" variant="light" className="button-pill">
                 Explore the strand
               </ButtonLink>
-              <ButtonLink href="/quiz/" variant="outline-light" arrow={false}>
-                <Sparkles size={17} />
+              <ButtonLink
+                href="/quiz/"
+                variant="outline-light"
+                className="button-pill"
+                arrow={false}
+              >
+                <Icon name="Compass" size={18} />
                 Find your career match
               </ButtonLink>
             </div>
             <div className="hero-footnote">
               <span className="mini-icon">
-                <GraduationCap size={18} />
+                <Icon name="GraduationCap" size={18} />
               </span>
-              <span>For tomorrow’s entrepreneurs, leaders & changemakers</span>
+              <span>
+                Building Future Entrepreneurs, Accountants, and Corporate
+                Leaders.
+              </span>
             </div>
           </div>
-          <div className="hero-floating">
+          <Link href="/careers/" className="hero-floating">
             <span className="floating-icon">
-              <ChartNoAxesCombined size={24} />
+              <Icon name="ChartNoAxesCombined" size={22} />
             </span>
             <div>
               <strong>A head start on your future.</strong>
               <span>Real skills. Endless possibilities.</span>
             </div>
             <span className="floating-arrow">
-              <ArrowUpRight size={20} />
+              <Icon name="ArrowUpRight" size={20} />
             </span>
-          </div>
+          </Link>
         </div>
       </section>
       <div className="promise-bar">
         <div className="container promise-inner">
           <span>
-            <ChartNoAxesCombined size={19} />
+            <Icon name="ChartNoAxesCombined" size={20} />
             Think like an entrepreneur
           </span>
           <span>
-            <Target size={19} />
+            <Icon name="Target" size={20} />
             Solve real-world problems
           </span>
           <span>
-            <UsersRound size={19} />
+            <Icon name="UsersRound" size={20} />
             Lead with confidence
           </span>
           <span>
-            <Lightbulb size={19} />
+            <Icon name="Lightbulb" size={20} />
             Create your own opportunities
           </span>
         </div>
@@ -122,7 +116,7 @@ export default function Home() {
           </p>
           <Link href="/about/" className="text-link">
             Get to know ABM
-            <ArrowRight size={16} />
+            <Icon name="ArrowRight" size={17} />
           </Link>
         </div>
         <div className="benefits-list">
@@ -145,7 +139,7 @@ export default function Home() {
           ].map((item) => (
             <div className="benefit" key={item.title}>
               <span className="icon-tile">
-                <Icon name={item.icon} />
+                <Icon name={item.icon} size={22} />
               </span>
               <div>
                 <h3>{item.title}</h3>
@@ -165,7 +159,7 @@ export default function Home() {
               aria-label="View all subjects"
               className="circle-link"
             >
-              <ArrowUpRight size={19} />
+              <Icon name="ArrowUpRight" size={19} />
             </Link>
           </div>
           <div className="subject-mini-grid">
@@ -174,7 +168,7 @@ export default function Home() {
               .slice(0, 6)
               .map((subject) => (
                 <Link href={`/subjects/#${subject.id}`} key={subject.id}>
-                  <Icon name={subject.icon} size={23} />
+                  <Icon name={subject.icon} size={22} />
                   <span>{subject.shortTitle}</span>
                 </Link>
               ))}
@@ -205,7 +199,7 @@ export default function Home() {
                 />
                 <div className="photo-shade" />
                 <span className="career-card-tag">
-                  <Icon name={career.icon} size={19} />
+                  <Icon name={career.icon} size={20} />
                 </span>
                 <div className="career-card-bottom">
                   <div>
@@ -222,7 +216,7 @@ export default function Home() {
                     <h3>{career.shortTitle}</h3>
                   </div>
                   <span className="photo-arrow">
-                    <ArrowUpRight size={20} />
+                    <Icon name="ArrowUpRight" size={19} />
                   </span>
                 </div>
               </Link>
@@ -235,22 +229,24 @@ export default function Home() {
           <div className="quiz-art-paper">
             <span className="paper-heading" />
             <span>
-              <Check />
+              <Icon name="Check" size={14} strokeWidth={2.5} />
               <i />
             </span>
             <span>
-              <Check />
+              <Icon name="Check" size={14} strokeWidth={2.5} />
               <i />
             </span>
             <span>
-              <Check />
+              <Icon name="Check" size={14} strokeWidth={2.5} />
               <i />
             </span>
           </div>
           <div className="quiz-art-target">
-            <Target size={94} strokeWidth={1.7} />
+            <Icon name="Target" size={76} strokeWidth={1.5} />
           </div>
-          <Sparkles className="art-spark" size={33} />
+          <span className="art-spark">
+            <Icon name="Compass" size={30} strokeWidth={1.6} />
+          </span>
         </div>
         <div className="quiz-home-copy">
           <p className="eyebrow">Your interests. Your possibilities.</p>
@@ -263,7 +259,7 @@ export default function Home() {
             questions and explore a path that fits.
           </p>
           <div className="quiz-home-actions">
-            <ButtonLink href="/quiz/" variant="light">
+            <ButtonLink href="/quiz/" variant="light" className="button-pill">
               Find my career match
             </ButtonLink>
             <span>5 questions · About 2 minutes</span>
@@ -273,6 +269,7 @@ export default function Home() {
           ?
         </span>
       </section>
+      <StudentSpotlights />
       <section className="container home-bottom section-space">
         <div className="home-events">
           <SectionHeading
@@ -303,12 +300,12 @@ export default function Home() {
                   <h3>{event.title}</h3>
                   <p>{event.category}</p>
                 </div>
-                <ArrowUpRight size={18} />
+                <Icon name="ArrowUpRight" size={18} />
               </Link>
             ))}
           </div>
           <p className="fine-print">
-            Illustrative event calendar. School dates to be confirmed.
+            SY 2026–2027 campus calendar · Westbridge Senior High
           </p>
         </div>
         <div className="home-gallery">
@@ -332,7 +329,7 @@ export default function Home() {
               />
               <span>
                 Ideas in action
-                <ArrowUpRight size={17} />
+                <Icon name="ArrowUpRight" size={17} />
               </span>
             </div>
             {galleryItems.slice(1, 3).map((item) => (
@@ -362,30 +359,30 @@ export default function Home() {
                 href={resource.href}
                 download={resource.fileName}
               >
-                <BookOpen size={21} />
+                <Icon name="BookOpen" size={20} />
                 <span>{resource.title}</span>
-                <Download size={16} />
+                <Icon name="Download" size={17} />
               </a>
             ))}
           </div>
           <Link className="resource-tip" href="/resources/#faqs">
-            <Lightbulb size={20} />
+            <Icon name="Lightbulb" size={20} />
             <span>
               Questions about ABM?<strong>We’ve got answers.</strong>
             </span>
-            <ChevronRight size={16} />
+            <Icon name="ChevronRight" size={18} />
           </Link>
         </div>
       </section>
       <section className="prefooter">
         <div className="container">
           <span>
-            <GraduationCap size={24} />
+            <Icon name="GraduationCap" size={24} />
             The next chapter is yours to write.
           </span>
           <Link href="/contact/">
             Let’s talk about your future
-            <ArrowRight size={18} />
+            <Icon name="ArrowRight" size={18} />
           </Link>
         </div>
       </section>

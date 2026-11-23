@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { BookOpen, ArrowUpRight, GraduationCap } from "lucide-react";
 import { navigation, site } from "@/lib/site";
+import { SchoolLogo } from "./school-logo";
+import { Icon } from "./ui";
 
 export function Footer() {
   return (
@@ -9,8 +10,10 @@ export function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link href="/" className="brand">
-              <BookOpen size={34} strokeWidth={1.5} aria-hidden="true" />
-              <span>
+              <span className="brand-icon">
+                <SchoolLogo variant="dark" size={44} />
+              </span>
+              <span className="brand-text">
                 <strong>ABM. Strand</strong>
                 <small>{site.school}</small>
               </span>
@@ -28,11 +31,11 @@ export function Footer() {
             ))}
           </div>
           <Link href="/quiz/" className="footer-invitation">
-            <GraduationCap size={27} strokeWidth={1.5} />
+            <Icon name="GraduationCap" size={28} strokeWidth={1.6} />
             <span>
               Not sure where to start?
               <strong>
-                Find your career match <ArrowUpRight size={16} />
+                Find your career match <Icon name="ArrowUpRight" size={17} />
               </strong>
             </span>
           </Link>
@@ -42,7 +45,9 @@ export function Footer() {
             © {new Date().getUTCFullYear()} {site.school}. Made for future
             business minds.
           </p>
-          <p>School project · Illustrative campus imagery</p>
+          <p>
+            {site.email} · {site.phone}
+          </p>
         </div>
       </div>
     </footer>

@@ -6,3 +6,4 @@ out/
 !.env.example
 *.tar.gz
 qa/
+AGENTS.md
