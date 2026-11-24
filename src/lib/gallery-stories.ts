@@ -7,7 +7,9 @@ export interface GalleryStory {
   author: string;
   photoCredit?: string;
   caption: string;
-  imageStyle?: "poster" | "portrait" | "landscape";
+  imageWidth: number;
+  imageHeight: number;
+  imageStyle?: "poster" | "portrait" | "landscape" | "square";
   markdown: string;
 }
 
@@ -23,6 +25,8 @@ export const galleryStories: Record<string, GalleryStory> = {
     photoCredit: "Poster artwork by Ma. Jiecel Najera",
     caption:
       "Official announcement poster for the OLLCF SHS Food Bazaar 2026 — 'From Concept to Commerce.'",
+    imageWidth: 509,
+    imageHeight: 720,
     imageStyle: "poster",
     markdown: `If you ask almost any ABM student at Our Lady of Lourdes College Foundation what day they look forward to the most, there's a good chance they'll say the **SHS Food Bazaar**.
 
@@ -73,6 +77,8 @@ A lot of Grade 10 students worry that ABM is all ledgers, calculators, and quiet
     author: "AYBL Editorial Team",
     caption:
       "Members, advisers, and newly gathered officers of the Association of Young Business Leaders during the SY 2026–2027 General Assembly.",
+    imageWidth: 1440,
+    imageHeight: 810,
     imageStyle: "landscape",
     markdown: `The start of a school year always feels a little noisy and uncertain — especially if you're new to Senior High School and still trying to figure out where your classrooms are, let alone which student organization to join.
 
@@ -110,7 +116,9 @@ If you're an incoming Grade 11 Lourdenian wondering whether you'll fit in, take 
     photoCredit: "Graphics by Akime Jhean Rasco & Ma. Jiecel Najera",
     caption:
       "Official banner introducing the newly elected officers of the Association of Young Business Leaders at OLLCF Senior High School.",
-    imageStyle: "landscape",
+    imageWidth: 590,
+    imageHeight: 495,
+    imageStyle: "square",
     markdown: `Every school year brings a handover moment — that bittersweet mix of thanking the seniors who paved the way and cheering on the new team ready to step forward.
 
 This year, **the torch has been passed** to a brand-new set of officers for the **Association of Young Business Leaders (AYBL)** at Our Lady of Lourdes College Foundation.
@@ -156,6 +164,8 @@ Want to put faces to all twenty names? Scroll through the full officer roster on
     author: "AYBL Editorial Team",
     caption:
       "AYBL President Rey Kenneth Odasco beaming with his Mr. Intramurals 2026 trophy and multiple special award sashes.",
+    imageWidth: 1080,
+    imageHeight: 1440,
     imageStyle: "portrait",
     markdown: `It's one thing to lead meetings and plan student activities behind a desk. It's another thing entirely to walk out under campus stage lights in front of hundreds of cheering Lourdenians and represent your organization with total composure.
 
@@ -196,6 +206,8 @@ Congratulations again, Kenneth! Thank you for showing incoming students that Lou
     author: "AYBL Editorial Team",
     caption:
       "AYBL VP for Internal Communication Evangeline Jazz Reema Ibasco celebrated as Ms. Intramurals 2026 – 2nd Runner-Up.",
+    imageWidth: 1080,
+    imageHeight: 1440,
     imageStyle: "portrait",
     markdown: `Anyone who has worked with **Evangeline Jazz Reema Ibasco** inside AYBL knows she's the kind of person who keeps people connected — making sure messages are clear, teammates feel included, and details don't slip through the cracks.
 
@@ -230,7 +242,9 @@ Way to go, Evangeline! Your AYBL family couldn't be prouder.`,
     author: "AYBL Editorial Team",
     caption:
       "AYBL Director for Public Relations Shane Rafael during Mr. Intramurals 2026 at OLLCF, crowned 3rd Runner-Up.",
-    imageStyle: "portrait",
+    imageWidth: 1440,
+    imageHeight: 810,
+    imageStyle: "landscape",
     markdown: `In any organization, the **Director for Public Relations** is one of the people who represents its voice and spirit to everyone else. At OLLCF Intramurals 2026, **Shane Rafael** took that role literally — stepping up in front of the entire school and earning **Mr. Intramurals 2026 – 3rd Runner-Up**.
 
 > "You shined all throughout the competition. Keep on shining — we are so proud of the special milestone you achieved!"
@@ -262,6 +276,8 @@ Huge congratulations once again, Shane!`,
     author: "AYBL Editorial Team",
     caption:
       "AYBL Director for Audit Cristel B. Aguas with her trophy and bouquet after being crowned Ms. Intramurals 2026 – 3rd Runner-Up.",
+    imageWidth: 443,
+    imageHeight: 590,
     imageStyle: "portrait",
     markdown: `There's an old stereotype that audit and accounting folks just sit quietly in the corner checking receipts. **Cristel B. Aguas**, our AYBL Director for Audit, happily broke that stereotype into pieces at OLLCF Intramurals 2026.
 
@@ -294,6 +310,8 @@ Cristel's win is a joyful reminder to try new things, back your classmates, and 
     author: "AYBL Editorial Team",
     caption:
       "OLLCF Senior High School students listening and collaborating during an AYBL leadership and planning session.",
+    imageWidth: 1440,
+    imageHeight: 810,
     imageStyle: "landscape",
     markdown: `Not every big moment in ABM happens under stage lights or behind a busy bazaar booth. Most of the real magic starts right here — in an ordinary classroom with students leaning in, taking notes, and figuring out what they want to build together.
 
@@ -328,6 +346,8 @@ That's the everyday heartbeat of ABM at OLLCF — practical, welcoming, and grou
     author: "AYBL Editorial Team",
     caption:
       "OLLCF ABM students smiling and waving together during their July 29, 2026 AYBL gathering.",
+    imageWidth: 1440,
+    imageHeight: 810,
     imageStyle: "landscape",
     markdown: `When incoming Grade 11 students ask us what ABM at Our Lady of Lourdes College Foundation is *really* like, we can list all the specialized subjects and college pathways — and those are genuinely important.
 
@@ -360,7 +380,9 @@ Come as you are. Bring your curiosity, make friends early, and let's build somet
     author: "AYBL Editorial Team",
     caption:
       "AYBL officers, winners, and friends gathering backstage for a joyful family photo after OLLCF Intramurals 2026.",
-    imageStyle: "landscape",
+    imageWidth: 1080,
+    imageHeight: 1440,
+    imageStyle: "portrait",
     markdown: `There's a special kind of joy in the five minutes right after a big campus event wraps up — when the nerves finally fade, everyone rushes in for hugs and group photos, and you realize you pulled it off *together*.
 
 This backstage snapshot captures the **AYBL family** celebrating right after **Mr. & Ms. Intramurals 2026**, where four AYBL officers earned top placements and special awards.
@@ -397,7 +419,9 @@ When you hear Lourdenians talk about school spirit at OLLCF, this exact moment i
     author: "AYBL Editorial Team",
     caption:
       "Close-up of the Intramurals 2026 award sashes including Mr. Popularity, Best in Sports Attire, Best in School Uniform, Best in Formal Attire, and 2nd Runner-Up.",
-    imageStyle: "landscape",
+    imageWidth: 1080,
+    imageHeight: 1440,
+    imageStyle: "portrait",
     markdown: `At first glance, this is a simple snapshot of white-and-gold sashes laid out after a busy night. Look a little closer, though, and each ribbon tells a story of preparation, pride, and community support.
 
 Earned by AYBL President **Rey Kenneth Odasco** during **OLLCF Intramurals 2026**, these sashes represent excellence across multiple categories:
@@ -433,7 +457,9 @@ A proud keepsake from Intramurals 2026, and a bright standard for every Lourdeni
     author: "Association of Young Business Leaders (AYBL)",
     caption:
       "Official AYBL graduation tribute celebrating the graduating Lourdenians of OLLCF Class 2026.",
-    imageStyle: "poster",
+    imageWidth: 526,
+    imageHeight: 526,
+    imageStyle: "square",
     markdown: `It always feels like Senior High School passes in slow motion during exam week — and then, somehow, in the blink of an eye, you're adjusting your toga and wondering where two whole years just went.
 
 This tribute from the **Association of Young Business Leaders (AYBL)** is for every single graduating Lourdenian of **OLLCF Class 2026**.

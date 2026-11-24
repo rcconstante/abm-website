@@ -59,9 +59,9 @@ export function GalleryStoryView({
           <p className="story-subtitle">{story.subtitle}</p>
 
           <div className="story-byline">
-            <span className="story-byline-badge">
-              <Icon name="UsersRound" size={18} />
-            </span>
+            <div className="story-byline-badge" aria-hidden="true">
+              <Icon name="UsersRound" size={20} />
+            </div>
             <div>
               <strong>{story.author}</strong>
               <span>
@@ -74,16 +74,17 @@ export function GalleryStoryView({
       </section>
 
       <div className="container story-container">
-        <figure className={`story-hero-figure story-hero-${story.imageStyle || "landscape"}`}>
-          <div className="story-hero-frame">
-            <Image
-              src={item.image}
-              alt={item.alt}
-              fill
-              priority
-              sizes="(max-width: 760px) 96vw, 960px"
-            />
-          </div>
+        <figure
+          className={`story-hero-figure story-hero-${story.imageStyle || "landscape"}`}
+        >
+          <Image
+            src={item.image}
+            alt={item.alt}
+            width={story.imageWidth}
+            height={story.imageHeight}
+            priority
+            className="story-hero-img"
+          />
           <figcaption className="story-hero-caption">
             <Icon name="Info" size={16} />
             <span>{story.caption}</span>

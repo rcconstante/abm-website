@@ -2436,14 +2436,14 @@ h2:focus {
   flex-shrink: 0;
 }
 
-.story-byline strong {
+.story-byline > div strong {
   display: block;
   font-size: 15px;
   color: var(--ink);
   line-height: 1.3;
 }
 
-.story-byline span {
+.story-byline > div span {
   display: block;
   font-size: 13px;
   color: var(--muted);
@@ -2451,55 +2451,50 @@ h2:focus {
 }
 
 .story-hero-figure {
-  margin: 40px 0 44px;
+  margin: 40px auto 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.story-hero-frame {
-  position: relative;
+.story-hero-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(15, 34, 89, 0.14);
+}
+
+.story-hero-landscape .story-hero-img {
   width: 100%;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 20px 50px rgba(15, 34, 89, 0.11);
+  max-width: 960px;
 }
 
-.story-hero-landscape .story-hero-frame {
-  aspect-ratio: 16 / 10;
-  background: var(--tint);
+.story-hero-portrait .story-hero-img,
+.story-hero-poster .story-hero-img {
+  max-height: min(80vh, 720px);
+  max-width: min(100%, 560px);
 }
 
-.story-hero-landscape .story-hero-frame img {
-  object-fit: cover;
-  object-position: center 25%;
-}
-
-.story-hero-portrait .story-hero-frame {
-  height: min(74vh, 660px);
-  background: linear-gradient(135deg, #0e1a3a 0%, #192f66 100%);
-}
-
-.story-hero-portrait .story-hero-frame img {
-  object-fit: contain;
-}
-
-.story-hero-poster .story-hero-frame {
-  height: min(76vh, 680px);
-  background: linear-gradient(180deg, #f3f6fc 0%, #e7eefb 100%);
-}
-
-.story-hero-poster .story-hero-frame img {
-  object-fit: contain;
+.story-hero-square .story-hero-img {
+  max-height: min(76vh, 620px);
+  max-width: min(100%, 620px);
 }
 
 .story-hero-caption {
-  display: flex;
+  display: inline-flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 13.5px;
   color: var(--muted);
   line-height: 1.55;
-  padding-inline: 4px;
+  max-width: 720px;
+  text-align: center;
+  padding-inline: 8px;
 }
 
 .story-hero-caption svg {
@@ -3810,9 +3805,11 @@ progress::-moz-progress-bar {
   .story-header-band {
     padding: 32px 0 36px;
   }
-  .story-hero-portrait .story-hero-frame,
-  .story-hero-poster .story-hero-frame {
-    height: min(56vh, 440px);
+  .story-hero-portrait .story-hero-img,
+  .story-hero-poster .story-hero-img,
+  .story-hero-square .story-hero-img {
+    max-height: 70vh;
+    max-width: 100%;
   }
   .story-prose {
     font-size: 16px;
@@ -4158,9 +4155,9 @@ progress::-moz-progress-bar {
     font-size: clamp(26px, 7.2vw, 36px);
   }
   .story-hero-figure {
-    margin: 28px 0 32px;
+    margin: 28px auto 32px;
   }
-  .story-hero-frame {
+  .story-hero-img {
     border-radius: 16px;
   }
   .story-prose blockquote {
