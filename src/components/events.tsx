@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import { events, type EventCategory } from "@/lib/content";
+import { site } from "@/lib/site";
 import { ButtonLink, Icon, PageIntro } from "./ui";
 
 const categories: readonly ("All events" | EventCategory)[] = [
   "All events",
-  "Expo",
-  "Research",
+  "Bazaar",
   "Enrollment",
-  "Webinar",
-  "Seminar",
   "Orientation",
+  "Research",
+  "Leadership",
+  "Highlight",
 ];
 
 export function EventsPage() {
@@ -30,15 +31,34 @@ export function EventsPage() {
       <PageIntro
         tag="Events & Updates"
         title="Step out. Show up. Get inspired."
-        text="Key dates for ABM business expos, research congresses, webinars, orientations, and enrollment deadlines."
+        text="Stay updated on OLLCF Senior High School & AYBL activities—from the SHS Food Bazaar 2026 and ongoing pre-registration to student leadership highlights."
       />
       <div className="container section-space">
         <div className="note">
           <Icon name="CalendarDays" size={20} />
           <p>
-            Sample SY 2026–2027 campus activity calendar for Westbridge Senior
-            High. Final schedules and room assignments are confirmed via the ABM
-            Strand Office before each event.
+            Official SY 2026–2027 highlights and upcoming campus activities for{" "}
+            <strong>{site.school} — Senior High School</strong> and the{" "}
+            <strong>{site.organization}</strong>. For real-time schedule
+            announcements, follow{" "}
+            <a
+              href={site.socials.shsFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-note-link"
+            >
+              OLLCF SHS
+            </a>{" "}
+            and{" "}
+            <a
+              href={site.socials.ayblFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-note-link"
+            >
+              AYBL on Facebook
+            </a>
+            .
           </p>
         </div>
 
@@ -57,7 +77,8 @@ export function EventsPage() {
             ))}
           </div>
           <p className="fine-print" aria-live="polite">
-            Showing {filteredEvents.length} of {events.length} upcoming events
+            Showing {filteredEvents.length} of {events.length} events &amp;
+            highlights
           </p>
         </div>
 
@@ -79,7 +100,7 @@ export function EventsPage() {
               <div className="event-detail-body">
                 <span className="resource-format">
                   {event.category}
-                  <span className="sample-tag">Campus calendar</span>
+                  <span className="sample-tag">{event.status}</span>
                 </span>
                 <h2>{event.title}</h2>
                 <p>{event.description}</p>
@@ -95,7 +116,7 @@ export function EventsPage() {
                 </div>
                 <details>
                   <summary>
-                    What to expect
+                    Event details &amp; highlights
                     <Icon name="ArrowRight" size={17} />
                   </summary>
                   <ul>
@@ -104,7 +125,7 @@ export function EventsPage() {
                     ))}
                   </ul>
                   <Link href="/contact/" className="text-link">
-                    Ask about this event or request a campus visit
+                    Ask OLLCF SHS about this activity or visit campus
                     <Icon name="ArrowUpRight" size={17} />
                   </Link>
                 </details>
@@ -116,10 +137,12 @@ export function EventsPage() {
         <div className="announcement">
           <Icon name="Megaphone" size={32} />
           <div>
-            <h2>Planning your next school year?</h2>
+            <h2>Ready to start your Senior High journey at OLLCF?</h2>
             <p>
-              Download the SHS Enrollment &amp; Requirements Guide or request a
-              guided Westbridge campus tour with our admissions team.
+              Pre-registration is ongoing! Download the OLLCF SHS Enrollment
+              Guide or reach out to our campus in Daet, Camarines Norte—plus
+              enjoy free school supplies &amp; uniform for incoming SHS
+              learners.
             </p>
           </div>
           <ButtonLink
@@ -127,7 +150,7 @@ export function EventsPage() {
             variant="secondary"
             className="button-pill"
           >
-            Request a campus tour
+            Inquire or visit campus
           </ButtonLink>
         </div>
       </div>

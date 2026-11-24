@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 import { Icon, PageIntro } from "./ui";
 
-const TOUR_TOPIC = "Request a campus tour";
+const TOUR_TOPIC = "Request a campus visit";
 
 export function ContactPage() {
   const [topic, setTopic] = useState("About the ABM strand");
@@ -50,11 +50,11 @@ export function ContactPage() {
 
     const tourLines =
       selectedTopic === TOUR_TOPIC
-        ? `\nPreferred campus tour date: ${tourDate || "Flexible"}\nPreferred time slot: ${tourSlot || "Morning (9:00 AM – 11:00 AM)"}`
+        ? `\nPreferred campus visit date: ${tourDate || "Flexible"}\nPreferred time slot: ${tourSlot || "Morning (9:00 AM – 11:00 AM)"}`
         : "";
 
     setMessage(
-      `ABM inquiry: ${selectedTopic}\n\nName: ${name}\nVisitor type: ${role}\nReply email: ${email}${tourLines}\n\n${inquiry}`,
+      `OLLCF ABM Strand Inquiry: ${selectedTopic}\n\nName: ${name}\nVisitor type: ${role}\nReply email: ${email}${tourLines}\n\n${inquiry}`,
     );
   }
 
@@ -75,7 +75,7 @@ export function ContactPage() {
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "abm-inquiry.txt";
+    link.download = "ollcf-abm-inquiry.txt";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -85,19 +85,20 @@ export function ContactPage() {
       <PageIntro
         tag="Get in Touch"
         title="Your questions are welcome here."
-        text="Choosing your next step is a big decision. Ask a question about the ABM strand, enrollment requirements, or request a guided campus tour."
+        text="Choosing your Senior High strand is a big step. Reach out to Our Lady of Lourdes College Foundation in Daet, Camarines Norte to ask about ABM enrollment, subjects, or AYBL."
       />
       <div className="container contact-layout section-space">
         <aside className="contact-info">
-          <p className="eyebrow">Let’s find your next step</p>
+          <p className="eyebrow">Here at OLLCF, your future is our concern</p>
           <h2>
             A conversation can
             <br />
             open a new door.
           </h2>
           <p>
-            Whether you’re a future student, a parent, or simply curious, we’re
-            glad you’re exploring Westbridge Senior High.
+            Whether you’re an incoming Grade 11 student, a parent or guardian,
+            or a transferee exploring ABM, we’re glad you’re considering{" "}
+            <strong>{site.school}</strong>.
           </p>
 
           <div className="contact-detail">
@@ -105,11 +106,30 @@ export function ContactPage() {
               <Icon name="GraduationCap" size={22} />
             </span>
             <div>
-              <h3>ABM Strand Office</h3>
+              <h3>Senior High School · ABM Strand</h3>
               <p>{site.school}</p>
               <p className="contact-subdetail">
-                {site.coordinator} · {site.coordinatorRole}
+                {site.organization} · Adviser: {site.adviser}
               </p>
+            </div>
+          </div>
+
+          <div className="contact-detail">
+            <span className="icon-tile">
+              <Icon name="Phone" size={22} />
+            </span>
+            <div>
+              <h3>Telephone &amp; mobile</h3>
+              <p>
+                <a href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}>
+                  {site.phone}
+                </a>
+                {" · "}
+                <a href={`tel:${site.mobile.replace(/[^\d+]/g, "")}`}>
+                  {site.mobile}
+                </a>
+              </p>
+              <p className="contact-subdetail">{site.officeHours}</p>
             </div>
           </div>
 
@@ -125,19 +145,6 @@ export function ContactPage() {
 
           <div className="contact-detail">
             <span className="icon-tile">
-              <Icon name="Phone" size={22} />
-            </span>
-            <div>
-              <h3>Admissions &amp; guidance</h3>
-              <a href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}>
-                {site.phone}
-              </a>
-              <p className="contact-subdetail">{site.officeHours}</p>
-            </div>
-          </div>
-
-          <div className="contact-detail">
-            <span className="icon-tile">
               <Icon name="MapPin" size={22} />
             </span>
             <div>
@@ -147,21 +154,57 @@ export function ContactPage() {
           </div>
 
           <div className="contact-note">
-            <strong>Demo school profile</strong>
+            <strong>Official OLLCF &amp; AYBL pages</strong>
             <p>
-              Westbridge Senior High details shown above are illustrative mock
-              data for previewing the site. Replace them via{" "}
-              <code>.env.local</code> or <code>src/lib/site.ts</code> before
-              official launch.
+              Connect with Our Lady of Lourdes College Foundation, OLLCF Senior
+              High School, and AYBL for live enrollment updates and events:
             </p>
+            <div className="contact-socials">
+              <a
+                href={site.socials.ollcfFacebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-pill"
+              >
+                OLLCF Official FB
+                <Icon name="ArrowUpRight" size={15} />
+              </a>
+              <a
+                href={site.socials.shsFacebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-pill"
+              >
+                OLLCF SHS FB
+                <Icon name="ArrowUpRight" size={15} />
+              </a>
+              <a
+                href={site.socials.ayblFacebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-pill"
+              >
+                AYBL Org FB
+                <Icon name="ArrowUpRight" size={15} />
+              </a>
+              <a
+                href={site.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-pill"
+              >
+                Instagram {site.socials.instagramHandle}
+                <Icon name="ArrowUpRight" size={15} />
+              </a>
+            </div>
           </div>
         </aside>
 
         <section className="contact-form-panel">
           <h2>What’s on your mind?</h2>
           <p>
-            Prospective students and parents can ask a question or schedule a
-            campus tour below.
+            Incoming Grade 11 students and parents can prepare an inquiry or
+            request a campus visit at OLLCF Daet below.
           </p>
           <form onSubmit={prepare} onChange={invalidateInquiry}>
             <div className="form-row">
@@ -173,7 +216,7 @@ export function ContactPage() {
                   required
                   minLength={2}
                   maxLength={100}
-                  placeholder="e.g. Alex Santos"
+                  placeholder="e.g. Juan Dela Cruz"
                 />
               </label>
               <label>
@@ -195,6 +238,7 @@ export function ContactPage() {
                 <select name="role" defaultValue="Prospective Student">
                   <option>Prospective Student</option>
                   <option>Parent / Guardian</option>
+                  <option>Transferee / Returnee</option>
                   <option>Teacher / Guidance Counselor</option>
                   <option>Other</option>
                 </select>
@@ -211,10 +255,10 @@ export function ContactPage() {
                 >
                   <option>About the ABM strand</option>
                   <option>{TOUR_TOPIC}</option>
-                  <option>Enrollment information</option>
+                  <option>SHS Pre-Registration &amp; Enrollment</option>
                   <option>Subjects and curriculum</option>
                   <option>College and career pathways</option>
-                  <option>School activities and events</option>
+                  <option>AYBL &amp; student activities</option>
                   <option>Something else</option>
                 </select>
               </label>
@@ -248,8 +292,8 @@ export function ContactPage() {
                 rows={6}
                 placeholder={
                   isCampusTour
-                    ? "Let us know how many visitors are coming and any specific ABM facilities or questions you’d like covered during your tour…"
-                    : "I’d like to know more about…"
+                    ? "Let us know how many visitors are coming and any questions about OLLCF SHS ABM enrollment or campus facilities…"
+                    : "I’d like to know more about enrolling in ABM at OLLCF…"
                 }
               />
             </label>
@@ -268,7 +312,7 @@ export function ContactPage() {
             >
               <Icon name="Send" size={18} />
               {isCampusTour
-                ? "Prepare campus tour request"
+                ? "Prepare campus visit request"
                 : "Prepare my inquiry"}
             </button>
           </form>
@@ -278,7 +322,7 @@ export function ContactPage() {
               <h3>
                 <Icon name="Check" size={20} />
                 {isCampusTour
-                  ? "Your campus tour request is ready."
+                  ? "Your campus visit request is ready."
                   : "Your inquiry is ready."}
               </h3>
               <p>
@@ -288,7 +332,7 @@ export function ContactPage() {
               <div className="inquiry-actions">
                 <a
                   className="button button-primary button-pill"
-                  href={`mailto:${site.email}?subject=${encodeURIComponent(isCampusTour ? "Westbridge ABM Campus Tour Request" : "ABM Strand inquiry")}&body=${encodeURIComponent(message)}`}
+                  href={`mailto:${site.email}?subject=${encodeURIComponent(isCampusTour ? "OLLCF ABM Campus Visit Request" : "OLLCF ABM Strand Inquiry")}&body=${encodeURIComponent(message)}`}
                 >
                   <Icon name="Mail" size={17} />
                   Open email app

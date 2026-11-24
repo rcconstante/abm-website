@@ -7,6 +7,7 @@ import {
   faqs,
   usefulLinks,
 } from "@/lib/content";
+import { site } from "@/lib/site";
 import {
   PageIntro,
   SectionHeading,
@@ -22,39 +23,43 @@ export function AboutPage() {
       <PageIntro
         tag="About ABM"
         title="For the business mind in you."
-        text="A place for curious thinkers, natural problem-solvers, and anyone with an idea worth exploring."
+        text="A guide for incoming Senior High School learners at Our Lady of Lourdes College Foundation (OLLCF) who want to build real-world skills in accounting, business, finance, and leadership."
       />
       <div className="container section-space">
         <div className="about-page-lead">
           <div className="about-page-image">
             <Image
-              src="/images/gallery-team.webp"
-              alt="Students collaborating on a business project"
+              src="/images/Ourladyoflourdes/student-/768992371_122262095336122924_5639107466373830583_n.jpg"
+              alt="Association of Young Business Leaders officers and ABM students at Our Lady of Lourdes College Foundation Senior High School"
               fill
               sizes="(max-width: 760px) 100vw, 45vw"
             />
             <span>
-              <Icon name="BookOpen" size={20} />
-              Learn it. Try it. Make it yours.
+              <Icon name="UsersRound" size={20} />
+              OLLCF SHS · Association of Young Business Leaders (AYBL)
             </span>
           </div>
           <div>
-            <p className="eyebrow">Meet your next chapter</p>
-            <h2>What is ABM?</h2>
+            <p className="eyebrow">Our Lady of Lourdes College Foundation</p>
+            <h2>What is ABM at OLLCF?</h2>
             <p>
-              Accountancy, Business, and Management explores the way businesses
-              work, from the first spark of an idea to the decisions that keep
-              an organization moving.
+              Accountancy, Business, and Management (ABM) explores how
+              organizations start, earn, grow, and serve their communities—from
+              a first spark of an idea to the financial and leadership decisions
+              that keep a business moving.
             </p>
             <p>
-              This Senior High School pathway builds your understanding of
-              accounting, finance, marketing, and management while developing
-              practical skills you can use in everyday life.
+              At <strong>{site.school}</strong> in Daet, Camarines Norte, Senior
+              High ABM students pair classroom mastery with active campus
+              leadership through the{" "}
+              <strong>Association of Young Business Leaders (AYBL)</strong> and
+              hands-on ventures like the annual{" "}
+              <strong>OLLCF SHS Food Bazaar</strong>.
             </p>
             <p>
-              You don’t need a business background to begin. Bring your
-              curiosity, a willingness to learn, and the confidence to ask
-              questions.
+              You don’t need a business background to begin—just bring your
+              curiosity, willingness to learn, and excitement to grow in a
+              supportive Lourdenian community.
             </p>
             <ButtonLink href="/subjects/" className="button-pill">
               Explore what you’ll learn
@@ -67,25 +72,26 @@ export function AboutPage() {
         </div>
         <section className="section-space">
           <SectionHeading
+            eyebrow="Why choose OLLCF Senior High School"
             title="More than lessons. Skills for life."
-            text="Connect classroom learning with the decisions, teamwork, and ideas that shape the real world."
+            text="Quality education since 1977—connecting classroom fundamentals with teamwork, entrepreneurship, and campus leadership."
           />
           <div className="three-grid">
             {[
               {
                 icon: "ChartNoAxesCombined",
                 title: "Make sense of the numbers",
-                text: "Read basic financial information, compare options, and support a decision with evidence.",
+                text: "Read financial statements, calculate markup and budgets, and support every business choice with clear evidence.",
               },
               {
                 icon: "UsersRound",
-                title: "Work well with people",
-                text: "Communicate clearly, share responsibilities, and learn what thoughtful leadership looks like.",
+                title: "Grow with AYBL leadership",
+                text: "Join the Association of Young Business Leaders to organize events, collaborate across divisions, and build real confidence.",
               },
               {
                 icon: "Lightbulb",
-                title: "Turn ideas into action",
-                text: "Identify a need, explore a market, build a plan, and learn from feedback.",
+                title: "From concept to commerce",
+                text: "Test real ideas in front of customers—from marketing plans and practical research to booths at the OLLCF SHS Food Bazaar.",
               },
             ].map((item) => (
               <article className="detail-card" key={item.title}>
@@ -100,19 +106,20 @@ export function AboutPage() {
         </section>
         <section className="about-fit">
           <div>
-            <p className="eyebrow">There’s no single business personality</p>
+            <p className="eyebrow">Incoming Grade 11 Lourdenians</p>
             <h2>Could ABM be your thing?</h2>
             <p>
-              If any of these sound like you, this could be a good place to
-              start.
+              If any of these sound like you—and you’re looking for a supportive
+              SHS department with free school supplies &amp; uniform—OLLCF ABM
+              could be the right start for you.
             </p>
           </div>
           <ul>
             {[
-              "You’re curious about how a business earns and grows.",
-              "You enjoy organizing ideas, people, or projects.",
-              "You want to understand money and make informed choices.",
-              "You have an idea and wonder how to bring it to life.",
+              "You’re curious about how a business earns, markets, and grows.",
+              "You enjoy organizing ideas, events, people, or student projects.",
+              "You want to understand money, accounting, and smart financial choices.",
+              "You have a business idea and want to bring it from concept to commerce.",
             ].map((text) => (
               <li key={text}>
                 <Icon name="Check" size={19} />
@@ -134,7 +141,7 @@ export function SubjectsPage() {
       <PageIntro
         tag="ABM Subjects"
         title="Build your business toolkit."
-        text="Discover the knowledge behind confident decisions, creative ideas, and businesses that work."
+        text="Discover the specialized, applied, and core subjects behind confident decisions, creative ideas, and businesses that work at OLLCF Senior High School."
       />
       <div className="container section-space">
         <div className="note">
@@ -211,40 +218,42 @@ export function CareersPage() {
       <PageIntro
         tag="Career Pathways"
         title="A world of possibilities ahead."
-        text="There’s more than one way to make your mark. Explore degrees and careers that build on an ABM foundation."
+        text="There’s more than one way to make your mark. Explore college degrees and professions that build on an OLLCF ABM foundation."
       />
       <div className="container section-space">
         <section className="roadmap">
-          <SectionHeading title="From your classroom to your calling." />
+          <SectionHeading title="From your OLLCF classroom to your calling." />
           <ol>
             <li>
               <span>1</span>
               <h3>Explore in Senior High</h3>
               <p>
-                Build foundational business skills and discover your interests.
+                Build foundational business skills at OLLCF SHS and discover
+                your strengths through ABM and AYBL.
               </p>
             </li>
             <li>
               <span>2</span>
               <h3>Choose your next step</h3>
               <p>
-                Compare college courses, admissions requirements, or business
-                training.
+                Compare college courses at OLLCF and partner institutions, check
+                admissions requirements, or plan a venture.
               </p>
             </li>
             <li>
               <span>3</span>
               <h3>Learn by doing</h3>
               <p>
-                Develop a portfolio through projects, internships, and practical
-                experience.
+                Develop a portfolio through projects, campus bazaars, student
+                leadership, and internships.
               </p>
             </li>
             <li>
               <span>4</span>
               <h3>Make your move</h3>
               <p>
-                Apply your skills in a career or work toward your own venture.
+                Apply your skills in a rewarding corporate career or launch your
+                own enterprise.
               </p>
             </li>
           </ol>
@@ -255,7 +264,7 @@ export function CareersPage() {
               <div className="career-detail-image">
                 <Image
                   src={career.image}
-                  alt={`Illustration of learning for ${career.title}`}
+                  alt={`Learning pathway for ${career.title}`}
                   fill
                   sizes="(max-width:760px) 100vw, 45vw"
                 />
@@ -287,7 +296,7 @@ export function CareersPage() {
           <p>
             These are possible pathways, not guaranteed outcomes. Entry
             requirements vary by college; some professions require additional
-            qualifications or licensure.
+            qualifications or licensure such as the CPA board exam.
           </p>
         </div>
         <QuizCallout />
@@ -302,12 +311,12 @@ export function ResourcesPage() {
       <PageIntro
         tag="Learning Resources"
         title="Good resources. Better study days."
-        text="Keep a useful guide close by, give your ideas a little structure, and make the most of your learning journey."
+        text="Download free OLLCF admissions checklists, ABM study guides, and budgeting templates—plus quick links to official OLLCF & DepEd pages."
       />
       <div className="container section-space">
         <SectionHeading
           title="Your learning library"
-          text="Original, free-to-download materials. No account needed."
+          text="Original, free-to-download materials for incoming Grade 11 and current OLLCF ABM learners. No account needed."
         />
         <div className="two-grid">
           {resources.map((resource) => (
@@ -339,15 +348,15 @@ export function ResourcesPage() {
             {[
               {
                 title: "Practice a little, often",
-                text: "Work through one short accounting or math exercise a day. Explain each step in your own words.",
+                text: "Work through one short accounting or business math exercise a day and explain each step in your own words.",
               },
               {
-                title: "Connect it to real life",
-                text: "Pick a local business. Think about its customers, costs, pricing, and the problem it solves.",
+                title: "Connect it to local business",
+                text: "Observe businesses around Daet—study their customers, pricing, costs, and the everyday needs they solve.",
               },
               {
                 title: "Keep a question list",
-                text: "Write down what you don’t understand. Bring specific questions to your teacher or study group.",
+                text: "Write down concepts you want to clarify and bring specific questions to your OLLCF teachers or AYBL study peers.",
               },
             ].map((tip) => (
               <article className="study-tip" key={tip.title}>
@@ -360,8 +369,8 @@ export function ResourcesPage() {
         </section>
         <section className="resource-links-section">
           <SectionHeading
-            title="Keep exploring"
-            text="Trusted starting points for your research and college preparation."
+            title="Official OLLCF pages & learning links"
+            text="Follow OLLCF Senior High School and AYBL directly, and explore trusted DepEd and BSP resources."
           />
           <div className="two-grid">
             {usefulLinks.map((link) => (

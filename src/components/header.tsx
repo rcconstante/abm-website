@@ -30,13 +30,13 @@ export function Header() {
           onClick={() => setOpen(false)}
         >
           <span className="brand-icon">
-            <SchoolLogo variant="light" size={42} />
+            <SchoolLogo variant="light" size={48} />
           </span>
           <span className="brand-text">
             <strong>
               ABM<span className="brand-dot">.</span> Strand
             </strong>
-            <small>{site.school}</small>
+            <small>{site.schoolShort}</small>
           </span>
         </Link>
 

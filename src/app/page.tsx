@@ -13,6 +13,7 @@ import {
   events,
   resources,
 } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
         <Image
           className="hero-image"
           src="/images/hero.webp"
-          alt="Three students ready to explore a future in business on a tropical school campus"
+          alt="Senior high students ready to explore their future in Accountancy, Business, and Management at Our Lady of Lourdes College Foundation"
           fill
           priority
           sizes="100vw"
@@ -29,6 +30,10 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="container hero-inner">
           <div className="hero-content">
+            <p className="hero-school-pill">
+              <Icon name="GraduationCap" size={16} />
+              {site.school} · {site.locationShort}
+            </p>
             <div className="hero-title">
               <h1>
                 Think big.
@@ -37,11 +42,12 @@ export default function Home() {
               </h1>
             </div>
             <p className="hero-definition">
-              Accountancy, Business, and Management
+              Accountancy, Business, and Management — OLLCF Senior High School
             </p>
             <p className="hero-description">
               Turn your curiosity into confidence. Build the skills to lead,
-              create, and make your mark in the world of business.
+              create, and thrive with OLLCF’s ABM Strand and the Association of
+              Young Business Leaders (AYBL).
             </p>
             <div className="hero-actions">
               <ButtonLink href="/about/" variant="light" className="button-pill">
@@ -62,8 +68,7 @@ export default function Home() {
                 <Icon name="GraduationCap" size={18} />
               </span>
               <span>
-                Building Future Entrepreneurs, Accountants, and Corporate
-                Leaders.
+                {site.motto} · {site.tagline}
               </span>
             </div>
           </div>
@@ -73,7 +78,7 @@ export default function Home() {
             </span>
             <div>
               <strong>A head start on your future.</strong>
-              <span>Real skills. Endless possibilities.</span>
+              <span>OLLCF SHS ABM · Quality Education Since 1977</span>
             </div>
             <span className="floating-arrow">
               <Icon name="ArrowUpRight" size={20} />
@@ -93,29 +98,29 @@ export default function Home() {
           </span>
           <span>
             <Icon name="UsersRound" size={20} />
-            Lead with confidence
+            Lead with AYBL confidence
           </span>
           <span>
             <Icon name="Lightbulb" size={20} />
-            Create your own opportunities
+            Quality · Excellence · Success
           </span>
         </div>
       </div>
       <section className="container home-about section-space">
         <div className="about-summary">
-          <p className="eyebrow">A strand full of possibilities</p>
+          <p className="eyebrow">OLLCF Senior High School · ABM Guide</p>
           <h2>
             Big ideas begin
             <br />
             with a strong foundation.
           </h2>
           <p>
-            ABM brings business to life. Explore how money works, what makes a
-            great leader, and how a simple idea can become something
-            extraordinary.
+            Designed for incoming Lourdenian Senior High learners—discover how
+            business works, meet the Association of Young Business Leaders
+            (AYBL), and prepare for your dream degree in Daet, Camarines Norte.
           </p>
           <Link href="/about/" className="text-link">
-            Get to know ABM
+            Get to know OLLCF ABM
             <Icon name="ArrowRight" size={17} />
           </Link>
         </div>
@@ -124,17 +129,17 @@ export default function Home() {
             {
               icon: "BookOpen",
               title: "Knowledge you can build on",
-              text: "Understand business, finance, and the decisions behind them.",
+              text: "Master accounting, business finance, marketing, and management fundamentals.",
             },
             {
               icon: "Target",
-              title: "Skills beyond the classroom",
-              text: "Put your ideas into practice through hands-on projects.",
+              title: "Hands-on campus enterprise",
+              text: "Bring concepts to commerce through the OLLCF SHS Food Bazaar and AYBL initiatives.",
             },
             {
               icon: "GraduationCap",
-              title: "Ready for what comes next",
-              text: "Find a foundation for college, a career, or your own venture.",
+              title: "Ready for college & beyond",
+              text: "Build a strong pathway toward BS Accountancy, BSBA, Finance, Marketing, or your own venture.",
             },
           ].map((item) => (
             <div className="benefit" key={item.title}>
@@ -180,7 +185,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="One strand. So many directions."
             title="Where could ABM take you?"
-            text="Find the path that speaks to your interests, strengths, and ambitions."
+            text="Find the business degree and career path that matches your interests, strengths, and ambitions."
             href="/careers/"
             linkLabel="Explore career pathways"
           />
@@ -253,7 +258,7 @@ export default function Home() {
           </h2>
           <p>
             Not sure which business career feels like you? Answer five quick
-            questions and explore a path that fits.
+            questions and explore a path that fits before choosing ABM at OLLCF.
           </p>
           <div className="quiz-home-actions">
             <ButtonLink href="/quiz/" variant="light" className="button-pill">
@@ -270,7 +275,7 @@ export default function Home() {
       <section className="container home-bottom section-space">
         <div className="home-events">
           <SectionHeading
-            eyebrow="Connect & discover"
+            eyebrow="OLLCF SHS & AYBL"
             title="On the horizon"
             href="/events/"
             linkLabel="All events"
@@ -295,37 +300,40 @@ export default function Home() {
                 </div>
                 <div>
                   <h3>{event.title}</h3>
-                  <p>{event.category}</p>
+                  <p>
+                    {event.category} · {event.status}
+                  </p>
                 </div>
                 <Icon name="ArrowUpRight" size={18} />
               </Link>
             ))}
           </div>
           <p className="fine-print">
-            SY 2026–2027 campus calendar · Westbridge Senior High
+            SY 2026–2027 · {site.schoolShort} &amp; AYBL
           </p>
         </div>
         <div className="home-gallery">
           <SectionHeading
-            eyebrow="Learning, brought to life"
-            title="The ABM experience"
+            eyebrow="AYBL & campus life"
+            title="The OLLCF ABM experience"
             href="/gallery/"
             linkLabel="View gallery"
           />
           <Link
             href="/gallery/"
             className="gallery-home-mosaic"
-            aria-label="Explore the student showcase"
+            aria-label="Explore the OLLCF ABM and AYBL student showcase"
           >
             <div className="mosaic-large">
               <Image
                 src={galleryItems[0].image}
                 alt={galleryItems[0].alt}
                 fill
+                style={{ objectPosition: galleryItems[0].objectPosition }}
                 sizes="(max-width: 700px) 65vw, 22vw"
               />
               <span>
-                Ideas in action
+                SHS Food Bazaar &amp; AYBL
                 <Icon name="ArrowUpRight" size={17} />
               </span>
             </div>
@@ -335,6 +343,7 @@ export default function Home() {
                   src={item.image}
                   alt={item.alt}
                   fill
+                  style={{ objectPosition: item.objectPosition }}
                   sizes="(max-width: 700px) 30vw, 12vw"
                 />
               </div>
@@ -348,7 +357,9 @@ export default function Home() {
             href="/resources/"
             linkLabel="All resources"
           />
-          <p className="section-copy">Good resources. Better study days.</p>
+          <p className="section-copy">
+            Free OLLCF admissions &amp; ABM study guides.
+          </p>
           <div className="resource-mini-list">
             {resources.slice(0, 3).map((resource) => (
               <a
@@ -365,7 +376,7 @@ export default function Home() {
           <Link className="resource-tip" href="/resources/#faqs">
             <Icon name="Lightbulb" size={20} />
             <span>
-              Questions about ABM?<strong>We’ve got answers.</strong>
+              Questions about OLLCF ABM?<strong>We’ve got answers.</strong>
             </span>
             <Icon name="ChevronRight" size={18} />
           </Link>
@@ -375,10 +386,10 @@ export default function Home() {
         <div className="container">
           <span>
             <Icon name="GraduationCap" size={24} />
-            The next chapter is yours to write.
+            Think less, choose best—be a Lourdenian!
           </span>
           <Link href="/contact/">
-            Let’s talk about your future
+            Inquire at OLLCF Senior High School
             <Icon name="ArrowRight" size={18} />
           </Link>
         </div>

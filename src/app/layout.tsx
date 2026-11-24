@@ -11,18 +11,21 @@ import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://westbridgeshs.edu.ph"),
+  metadataBase: new URL("https://ollcf.edu.ph"),
   title: {
-    default: "ABM Strand — Westbridge Senior High",
-    template: "%s | ABM Strand",
+    default: "ABM Strand — Our Lady of Lourdes College Foundation",
+    template: "%s | OLLCF ABM Strand",
   },
   description:
-    "Explore Accountancy, Business, and Management at Westbridge Senior High. Discover subjects, college pathways, free learning resources, and your career match.",
-  icons: { icon: "/icon.svg" },
+    "Explore Accountancy, Business, and Management (ABM) at Our Lady of Lourdes College Foundation (OLLCF) Senior High School in Daet, Camarines Norte. Discover subjects, college pathways, AYBL leadership, events, and your career match.",
+  icons: {
+    icon: "/images/Ourladyoflourdes/logo.png",
+    apple: "/images/Ourladyoflourdes/logo.png",
+  },
   openGraph: {
-    title: "ABM Strand — Westbridge Senior High",
+    title: "ABM Strand — Our Lady of Lourdes College Foundation",
     description:
-      "Big ideas. Real-world skills. Discover your pathway in Accountancy, Business, and Management.",
+      "Here at OLLCF, Your Future is our Concern. Discover the Senior High School ABM Strand and the Association of Young Business Leaders (AYBL) in Daet, Camarines Norte.",
     images: [{ url: "/images/hero.webp", width: 1536, height: 1024 }],
   },
 };

@@ -191,7 +191,7 @@ export function PageIntro({
         <p>{text}</p>
       </div>
       <div className="intro-watermark" aria-hidden="true">
-        ABM
+        OLLCF
       </div>
     </section>
   );
@@ -205,7 +205,7 @@ export function QuizCallout() {
       </div>
       <div>
         <p className="eyebrow">A little curiosity. A world of possibilities.</p>
-        <h2>Your next chapter starts with you.</h2>
+        <h2>Your next chapter at OLLCF starts with you.</h2>
         <p>Discover a business career that connects with what you love.</p>
       </div>
       <ButtonLink href="/quiz/" variant="light" className="button-pill">
@@ -226,31 +226,29 @@ export function StudentSpotlights({
     >
       <div className={compact ? "" : "container"}>
         <SectionHeading
-          eyebrow="Student success & spotlights"
-          title="Voices from the ABM Strand."
-          text="Hear how Westbridge ABM learners turn classroom lessons into pop-up ventures, research defenses, and leadership skills."
-          href="/gallery/#student-work"
-          linkLabel="Explore student work"
+          eyebrow="Pride of OLLCF ABM & AYBL"
+          title="Celebrating our Young Business Leaders."
+          text="Meet the Association of Young Business Leaders (AYBL) officers who represented OLLCF Senior High School with pride at Intramurals 2026."
+          href="/gallery/#aybl-officers"
+          linkLabel="Meet all AYBL officers"
         />
-        <div className="three-grid spotlights-grid">
+        <div className="two-grid spotlights-grid">
           {studentSpotlights.map((student) => (
             <article className="spotlight-card" key={student.id}>
               <div className="spotlight-badge">{student.achievement}</div>
-              <blockquote>“{student.quote}”</blockquote>
+              <p className="spotlight-copy">{student.highlight}</p>
               <div className="spotlight-author">
                 <span className="spotlight-avatar">
                   <Image
                     src={student.photo}
-                    alt={`Portrait of ${student.name}, ${student.grade}`}
-                    width={52}
-                    height={52}
+                    alt={`${student.name} — ${student.achievement}`}
+                    width={56}
+                    height={56}
                   />
                 </span>
                 <div>
                   <strong>{student.name}</strong>
-                  <small>
-                    {student.grade} · {student.project}
-                  </small>
+                  <small>{student.role}</small>
                 </div>
               </div>
             </article>
