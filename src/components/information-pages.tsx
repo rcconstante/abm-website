@@ -95,8 +95,8 @@ export function AboutPage() {
               },
             ].map((item) => (
               <article className="detail-card" key={item.title}>
-                <span className="icon-tile">
-                  <Icon name={item.icon} size={24} />
+                <span className="icon-tile icon-tile-plain">
+                  <Icon name={item.icon} size={34} />
                 </span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -188,8 +188,8 @@ export function SubjectsPage() {
                     id={subject.id}
                     key={subject.id}
                   >
-                    <span className="icon-tile">
-                      <Icon name={subject.icon} size={24} />
+                    <span className="icon-tile icon-tile-plain">
+                      <Icon name={subject.icon} size={36} />
                     </span>
                     <h3>{subject.title}</h3>
                     <p>{subject.description}</p>
@@ -321,8 +321,8 @@ export function ResourcesPage() {
         <div className="two-grid">
           {resources.map((resource) => (
             <article className="resource-card" key={resource.id}>
-              <span className="icon-tile">
-                <Icon name="BookOpen" size={24} />
+              <span className="icon-tile icon-tile-plain">
+                <Icon name="BookOpen" size={36} />
               </span>
               <div>
                 <span className="resource-format">

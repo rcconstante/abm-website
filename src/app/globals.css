@@ -302,6 +302,17 @@ h2:focus {
   flex-shrink: 0;
 }
 
+.icon-tile:has(.custom-icon-img),
+.icon-tile-plain {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.floating-icon:has(.custom-icon-img) {
+  background: transparent;
+}
+
 .circle-link {
   display: inline-flex;
   width: 40px;
