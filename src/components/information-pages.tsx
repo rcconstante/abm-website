@@ -311,12 +311,12 @@ export function ResourcesPage() {
       <PageIntro
         tag="Learning Resources"
         title="Good resources. Better study days."
-        text="Download free OLLCF admissions checklists, ABM study guides, and budgeting templates—plus quick links to official OLLCF & DepEd pages."
+        text="Open free OLLCF admissions checklists, ABM study guides, and budgeting worksheets in PDF—plus quick links to official OLLCF & DepEd pages."
       />
       <div className="container section-space">
         <SectionHeading
           title="Your learning library"
-          text="Original, free-to-download materials for incoming Grade 11 and current OLLCF ABM learners. No account needed."
+          text="Original, free-to-read PDF guides for incoming Grade 11 and current OLLCF ABM learners. Opens in a new tab—no account needed."
         />
         <div className="two-grid">
           {resources.map((resource) => (
@@ -332,11 +332,12 @@ export function ResourcesPage() {
                 <p>{resource.description}</p>
                 <a
                   href={resource.href}
-                  download={resource.fileName}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-link"
                 >
-                  Download resource
-                  <Icon name="Download" size={17} />
+                  Open PDF
+                  <Icon name="ArrowUpRight" size={17} />
                 </a>
               </div>
             </article>

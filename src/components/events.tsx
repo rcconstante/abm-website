@@ -139,10 +139,9 @@ export function EventsPage() {
           <div>
             <h2>Ready to start your Senior High journey at OLLCF?</h2>
             <p>
-              Pre-registration is ongoing! Download the OLLCF SHS Enrollment
-              Guide or reach out to our campus in Daet, Camarines Norte—plus
-              enjoy free school supplies &amp; uniform for incoming SHS
-              learners.
+              Pre-registration is ongoing! Open the OLLCF SHS Enrollment Guide
+              PDF or reach out to our campus in Daet, Camarines Norte—plus enjoy
+              free school supplies &amp; uniform for incoming SHS learners.
             </p>
           </div>
           <ButtonLink

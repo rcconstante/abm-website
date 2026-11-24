@@ -43,8 +43,11 @@ export function Header() {
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item) => {
             const isCurrent =
-              pathname === item.href ||
-              (item.href !== "/" && pathname === item.href.slice(0, -1));
+              item.href === "/"
+                ? pathname === "/"
+                : pathname === item.href ||
+                  pathname === item.href.slice(0, -1) ||
+                  pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
@@ -86,8 +89,11 @@ export function Header() {
         >
           {navigation.map((item) => {
             const isCurrent =
-              pathname === item.href ||
-              (item.href !== "/" && pathname === item.href.slice(0, -1));
+              item.href === "/"
+                ? pathname === "/"
+                : pathname === item.href ||
+                  pathname === item.href.slice(0, -1) ||
+                  pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}

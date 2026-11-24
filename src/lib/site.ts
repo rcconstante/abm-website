@@ -1,32 +1,24 @@
-const validEmail = (value: string | undefined): string | null =>
-  value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && !/[\r\n]/.test(value)
-    ? value
-    : null;
-
 export const site = {
-  name: process.env.NEXT_PUBLIC_SCHOOL_NAME || "ABM Strand — OLLCF",
-  school:
-    process.env.NEXT_PUBLIC_SCHOOL_NAME ||
-    "Our Lady of Lourdes College Foundation",
+  name: "ABM Strand — OLLCF",
+  school: "Our Lady of Lourdes College Foundation",
   schoolShort: "OLLCF Senior High School",
   organization: "Association of Young Business Leaders (AYBL)",
   adviser: "Ms. Blossom L. Dionela",
   adviserRole: "AYBL Adviser · OLLCF Senior High School",
-  email:
-    validEmail(process.env.NEXT_PUBLIC_CONTACT_EMAIL) ||
-    "information.ollcf@gmail.com",
-  phone: process.env.NEXT_PUBLIC_SCHOOL_PHONE || "(054) 721 1368",
+  email: "information.ollcf@gmail.com",
+  phone: "(054) 721 1368",
   mobile: "0948 180 1434",
   officeHours: "Monday – Friday, 8:00 AM – 5:00 PM",
-  address:
-    process.env.NEXT_PUBLIC_SCHOOL_ADDRESS ||
-    "4WFV+H24, Vinzons Ave, Gahonon, Daet, 4600 Camarines Norte",
+  address: "4WFV+H24, Vinzons Ave, Gahonon, Daet, 4600 Camarines Norte",
+  plusCode: "4WFV+H24, Daet, Camarines Norte",
   locationShort: "Daet, Camarines Norte",
   tagline: "Quality · Excellence · Success",
   motto: "Here at OLLCF, Your Future is our Concern.",
-  schoolUrl: process.env.NEXT_PUBLIC_SCHOOL_URL?.startsWith("https://")
-    ? process.env.NEXT_PUBLIC_SCHOOL_URL
-    : "https://www.facebook.com/share/18g81mh4y9/?mibextid=wwXIfr",
+  schoolUrl: "https://www.facebook.com/share/18g81mh4y9/?mibextid=wwXIfr",
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=Our+Lady+of+Lourdes+College+Foundation,+Vinzons+Ave,+Gahonon,+Daet,+Camarines+Norte&t=&z=17&ie=UTF8&iwloc=&output=embed",
+  mapDirectionsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Our+Lady+of+Lourdes+College+Foundation,+Vinzons+Ave,+Gahonon,+Daet,+4600+Camarines+Norte",
   socials: {
     ollcfFacebook: "https://www.facebook.com/share/18g81mh4y9/?mibextid=wwXIfr",
     shsFacebook: "https://www.facebook.com/share/1BrF27ubuq/?mibextid=wwXIfr",

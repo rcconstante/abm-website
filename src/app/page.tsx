@@ -365,11 +365,12 @@ export default function Home() {
               <a
                 key={resource.id}
                 href={resource.href}
-                download={resource.fileName}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Icon name="BookOpen" size={20} />
                 <span>{resource.title}</span>
-                <Icon name="Download" size={17} />
+                <Icon name="ArrowUpRight" size={17} />
               </a>
             ))}
           </div>

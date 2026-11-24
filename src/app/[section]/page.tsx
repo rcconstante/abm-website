@@ -7,7 +7,6 @@ import {
   ResourcesPage,
 } from "@/components/information-pages";
 import { EventsPage } from "@/components/events";
-import { Gallery } from "@/components/gallery";
 import { CareerQuiz } from "@/components/career-quiz";
 import { ContactPage } from "@/components/contact";
 
@@ -17,7 +16,6 @@ const pages = {
   careers: { title: "Career Pathways", component: CareersPage },
   resources: { title: "Learning Resources", component: ResourcesPage },
   events: { title: "Events & Updates", component: EventsPage },
-  gallery: { title: "Student Showcase", component: Gallery },
   quiz: { title: "Find Your Career Match", component: CareerQuiz },
   contact: { title: "Get in Touch", component: ContactPage },
 };

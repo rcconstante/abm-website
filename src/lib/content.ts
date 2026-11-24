@@ -853,7 +853,7 @@ export interface LearningResource {
   title: string;
   description: string;
   category: "Study guides" | "Templates" | "College prep" | "Admissions";
-  format: "MD" | "CSV";
+  format: "PDF";
   href: string;
   fileName: string;
 }
@@ -864,9 +864,9 @@ export const resources: readonly LearningResource[] = [
     description:
       "Step-by-step admissions guide for incoming Grade 11 ABM learners at Our Lady of Lourdes College Foundation, including documentary requirements and contact details.",
     category: "Admissions",
-    format: "MD",
-    href: "/resources/shs-enrollment-guide.md",
-    fileName: "ollcf-shs-enrollment-guide.md",
+    format: "PDF",
+    href: "/resources/ollcf-shs-enrollment-guide.pdf",
+    fileName: "ollcf-shs-enrollment-guide.pdf",
   },
   {
     id: "study-guide",
@@ -874,9 +874,9 @@ export const resources: readonly LearningResource[] = [
     description:
       "A plain-language introduction to accounting, pricing, marketing, and responsible business.",
     category: "Study guides",
-    format: "MD",
-    href: "/resources/abm-starter-guide.md",
-    fileName: "abm-starter-guide.md",
+    format: "PDF",
+    href: "/resources/abm-starter-study-guide.pdf",
+    fileName: "abm-starter-study-guide.pdf",
   },
   {
     id: "subject-checklist",
@@ -884,19 +884,19 @@ export const resources: readonly LearningResource[] = [
     description:
       "Track the business concepts and practical skills you want to understand and practice.",
     category: "Study guides",
-    format: "MD",
-    href: "/resources/abm-subject-checklist.md",
-    fileName: "abm-subject-checklist.md",
+    format: "PDF",
+    href: "/resources/abm-subject-skills-checklist.pdf",
+    fileName: "abm-subject-skills-checklist.pdf",
   },
   {
     id: "student-budget",
-    title: "Student budget template",
+    title: "Student budget planner worksheet",
     description:
-      "An editable spreadsheet-friendly template for planning income, savings, and expenses.",
+      "A clean printable worksheet for planning your weekly or monthly allowance, savings, needs, and expenses.",
     category: "Templates",
-    format: "CSV",
-    href: "/resources/student-budget.csv",
-    fileName: "student-budget.csv",
+    format: "PDF",
+    href: "/resources/student-budget-template.pdf",
+    fileName: "student-budget-template.pdf",
   },
   {
     id: "college-checklist",
@@ -904,9 +904,9 @@ export const resources: readonly LearningResource[] = [
     description:
       "Compare courses, check requirements, and prepare questions for your guidance counselor.",
     category: "College prep",
-    format: "MD",
-    href: "/resources/college-preparation-checklist.md",
-    fileName: "college-preparation-checklist.md",
+    format: "PDF",
+    href: "/resources/college-preparation-checklist.pdf",
+    fileName: "college-preparation-checklist.pdf",
   },
 ];
 
