@@ -30,8 +30,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="container hero-inner">
           <div className="hero-content">
-            <p className="hero-school-pill">
-              <Icon name="GraduationCap" size={16} />
+            <p className="hero-school-eyebrow">
               {site.school} · {site.locationShort}
             </p>
             <div className="hero-title">
@@ -59,13 +58,13 @@ export default function Home() {
                 className="button-pill"
                 arrow={false}
               >
-                <Icon name="Compass" size={18} />
+                <Icon name="Compass" size={18} variant="vector" />
                 Find your career match
               </ButtonLink>
             </div>
             <div className="hero-footnote">
               <span className="mini-icon">
-                <Icon name="GraduationCap" size={18} />
+                <Icon name="GraduationCap" size={18} variant="vector" />
               </span>
               <span>
                 {site.motto} · {site.tagline}
@@ -244,10 +243,10 @@ export default function Home() {
             </span>
           </div>
           <div className="quiz-art-target">
-            <Icon name="Target" size={76} strokeWidth={1.5} />
+            <Icon name="Target" size={64} />
           </div>
           <span className="art-spark">
-            <Icon name="Compass" size={30} strokeWidth={1.6} />
+            <Icon name="Lightbulb" size={32} />
           </span>
         </div>
         <div className="quiz-home-copy">

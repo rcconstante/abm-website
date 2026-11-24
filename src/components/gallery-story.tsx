@@ -139,7 +139,7 @@ export function GalleryStoryView({
                 className="button-pill"
                 arrow={false}
               >
-                <Icon name="Compass" size={17} />
+                <Icon name="Compass" size={17} variant="vector" />
                 Take career quiz
               </ButtonLink>
             </div>

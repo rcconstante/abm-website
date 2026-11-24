@@ -125,6 +125,13 @@ svg {
   flex-shrink: 0;
 }
 
+.custom-icon-img {
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(15, 34, 89, 0.14));
+}
+
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.9em;
@@ -283,14 +290,15 @@ h2:focus {
 }
 
 .icon-tile {
-  width: 52px;
-  height: 52px;
-  background: var(--tint);
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(180deg, #f3f7ff 0%, #e7effd 100%);
+  border: 1px solid #dbe6f8;
   color: var(--brand);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
+  border-radius: 15px;
   flex-shrink: 0;
 }
 
@@ -1016,15 +1024,17 @@ h2:focus {
   right: 0;
   bottom: 0;
   color: #ffffff;
-  background: #d99207;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
-  width: 110px;
-  height: 110px;
+  width: 112px;
+  height: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-9deg);
-  box-shadow: 7px 8px 0 rgba(9, 22, 58, 0.34);
+  transform: rotate(-6deg);
+  box-shadow: 0 12px 28px rgba(9, 22, 58, 0.32);
 }
 
 .art-spark {
@@ -1423,12 +1433,14 @@ h2:focus {
 }
 
 .quiz-callout-icon {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -1756,7 +1768,8 @@ h2:focus {
   padding: 12px 24px 12px 0;
 }
 
-.study-tip svg {
+.study-tip svg,
+.study-tip .custom-icon-img {
   color: var(--brand);
   margin-bottom: 16px;
 }
@@ -3872,22 +3885,15 @@ progress::-moz-progress-bar {
   display: block;
 }
 
-.hero-school-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  max-width: 100%;
-  padding: 7px 14px;
-  margin-bottom: 20px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(246, 213, 122, 0.45);
+.hero-school-eyebrow {
+  margin-bottom: 16px;
   color: #f6d57a;
   font-size: 13px;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-  backdrop-filter: blur(8px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(7, 13, 30, 0.36);
 }
 
 .spotlight-copy {
@@ -4088,9 +4094,9 @@ progress::-moz-progress-bar {
   .hero h1 {
     font-size: clamp(36px, 9.5vw, 48px);
   }
-  .hero-school-pill {
-    font-size: 12px;
-    padding: 6px 12px;
+  .hero-school-eyebrow {
+    font-size: 11.5px;
+    margin-bottom: 12px;
   }
   .hero-actions {
     width: 100%;

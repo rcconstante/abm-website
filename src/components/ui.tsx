@@ -94,17 +94,63 @@ const icons: Record<string, IconSvgElement> = {
   Compass: Compass01Icon,
 };
 
+const customWebpIcons: Record<string, string> = {
+  Calculator: "/images/icons/calculator.webp",
+  ChartNoAxesCombined: "/images/icons/growth-chart.webp",
+  TrendingUp: "/images/icons/growth-chart.webp",
+  ChartColumn: "/images/icons/growth-chart.webp",
+  ChartColumnIncreasing: "/images/icons/growth-chart.webp",
+  Target: "/images/icons/target.webp",
+  Compass: "/images/icons/target.webp",
+  Users: "/images/icons/team.webp",
+  UsersRound: "/images/icons/team.webp",
+  HeartHandshake: "/images/icons/team.webp",
+  Handshake: "/images/icons/team.webp",
+  MessagesSquare: "/images/icons/team.webp",
+  BookOpen: "/images/icons/book.webp",
+  Search: "/images/icons/book.webp",
+  GraduationCap: "/images/icons/graduation-cap.webp",
+  Briefcase: "/images/icons/briefcase.webp",
+  BriefcaseBusiness: "/images/icons/briefcase.webp",
+  Building2: "/images/icons/briefcase.webp",
+  Store: "/images/icons/briefcase.webp",
+  Megaphone: "/images/icons/briefcase.webp",
+  Lightbulb: "/images/icons/lightbulb.webp",
+  Coins: "/images/icons/coins.webp",
+  PiggyBank: "/images/icons/coins.webp",
+  Landmark: "/images/icons/coins.webp",
+  Sigma: "/images/icons/business-math.webp",
+  Monitor: "/images/icons/economics.webp",
+  Scale: "/images/icons/economics.webp",
+};
+
 export function Icon({
   name,
   size = 22,
   strokeWidth = 1.75,
   className = "",
+  variant = "auto",
 }: {
   name: string;
   size?: number;
   strokeWidth?: number;
   className?: string;
+  variant?: "auto" | "vector";
 }) {
+  const customSrc = variant === "auto" ? customWebpIcons[name] : undefined;
+  if (customSrc) {
+    const renderSize = Math.round(size * 1.32);
+    return (
+      <Image
+        src={customSrc}
+        alt=""
+        width={renderSize}
+        height={renderSize}
+        className={`custom-icon-img ${className}`.trim()}
+        aria-hidden="true"
+      />
+    );
+  }
   const icon = icons[name] || BookOpen01Icon;
   return (
     <HugeiconsIcon
