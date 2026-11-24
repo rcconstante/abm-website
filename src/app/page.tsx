@@ -1,11 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ButtonLink,
-  Icon,
-  SectionHeading,
-  StudentSpotlights,
-} from "@/components/ui";
+import { ButtonLink, Icon, SectionHeading } from "@/components/ui";
+import { StudentSpotlights } from "@/components/student-spotlights";
 import {
   subjects,
   careers,
@@ -22,16 +18,18 @@ export default function Home() {
         <Image
           className="hero-image"
           src="/images/hero.webp"
-          alt="Senior high students ready to explore their future in Accountancy, Business, and Management at Our Lady of Lourdes College Foundation"
+          alt="Senior high students in Accountancy, Business, and Management at Our Lady of Lourdes College Foundation"
           fill
           priority
+          fetchPriority="high"
+          decoding="sync"
           sizes="100vw"
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
           <div className="hero-content">
             <p className="hero-school-eyebrow">
-              {site.school} · {site.locationShort}
+              {site.schoolShort} · {site.locationShort}
             </p>
             <div className="hero-title">
               <h1>
@@ -40,17 +38,13 @@ export default function Home() {
                 Start with ABM.
               </h1>
             </div>
-            <p className="hero-definition">
-              Accountancy, Business, and Management — OLLCF Senior High School
-            </p>
             <p className="hero-description">
-              Turn your curiosity into confidence. Build the skills to lead,
-              create, and thrive with OLLCF’s ABM Strand and the Association of
-              Young Business Leaders (AYBL).
+              Build real-world skills in accounting, business, and leadership
+              with OLLCF’s ABM Strand and AYBL.
             </p>
             <div className="hero-actions">
               <ButtonLink href="/about/" variant="light" className="button-pill">
-                Explore the strand
+                Explore ABM
               </ButtonLink>
               <ButtonLink
                 href="/quiz/"
@@ -62,61 +56,40 @@ export default function Home() {
                 Find your career match
               </ButtonLink>
             </div>
-            <div className="hero-footnote">
-              <span className="mini-icon">
-                <Icon name="GraduationCap" size={18} variant="vector" />
-              </span>
-              <span>
-                {site.motto} · {site.tagline}
-              </span>
-            </div>
           </div>
-          <Link href="/careers/" className="hero-floating">
-            <span className="floating-icon">
-              <Icon name="ChartNoAxesCombined" size={22} />
-            </span>
-            <div>
-              <strong>A head start on your future.</strong>
-              <span>OLLCF SHS ABM · Quality Education Since 1977</span>
-            </div>
-            <span className="floating-arrow">
-              <Icon name="ArrowUpRight" size={20} />
-            </span>
-          </Link>
         </div>
       </section>
       <div className="promise-bar">
         <div className="container promise-inner">
           <span>
             <Icon name="ChartNoAxesCombined" size={20} />
-            Think like an entrepreneur
+            Entrepreneurial mindset
           </span>
           <span>
             <Icon name="Target" size={20} />
-            Solve real-world problems
+            Real-world business skills
           </span>
           <span>
             <Icon name="UsersRound" size={20} />
-            Lead with AYBL confidence
+            AYBL student leadership
           </span>
           <span>
             <Icon name="Lightbulb" size={20} />
-            Quality · Excellence · Success
+            Quality education since 1977
           </span>
         </div>
       </div>
       <section className="container home-about section-space">
         <div className="about-summary">
-          <p className="eyebrow">OLLCF Senior High School · ABM Guide</p>
+          <p className="eyebrow">OLLCF ABM Guide</p>
           <h2>
             Big ideas begin
             <br />
             with a strong foundation.
           </h2>
           <p>
-            Designed for incoming Lourdenian Senior High learners—discover how
-            business works, meet the Association of Young Business Leaders
-            (AYBL), and prepare for your dream degree in Daet, Camarines Norte.
+            Discover how business works, lead with AYBL, and prepare for your
+            dream college degree in Daet, Camarines Norte.
           </p>
           <Link href="/about/" className="text-link">
             Get to know OLLCF ABM
@@ -127,18 +100,18 @@ export default function Home() {
           {[
             {
               icon: "BookOpen",
-              title: "Knowledge you can build on",
-              text: "Master accounting, business finance, marketing, and management fundamentals.",
+              title: "Business fundamentals",
+              text: "Learn accounting, finance, marketing, and management from the ground up.",
             },
             {
               icon: "Target",
               title: "Hands-on campus enterprise",
-              text: "Bring concepts to commerce through the OLLCF SHS Food Bazaar and AYBL initiatives.",
+              text: "Turn class projects into real booths at the OLLCF SHS Food Bazaar.",
             },
             {
               icon: "GraduationCap",
-              title: "Ready for college & beyond",
-              text: "Build a strong pathway toward BS Accountancy, BSBA, Finance, Marketing, or your own venture.",
+              title: "College & career ready",
+              text: "Prepare for BS Accountancy, BSBA, Finance, Marketing, or your own venture.",
             },
           ].map((item) => (
             <div className="benefit" key={item.title}>
@@ -184,7 +157,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="One strand. So many directions."
             title="Where could ABM take you?"
-            text="Find the business degree and career path that matches your interests, strengths, and ambitions."
+            text="Explore business degrees and career paths that fit your strengths."
             href="/careers/"
             linkLabel="Explore career pathways"
           />
@@ -199,6 +172,7 @@ export default function Home() {
                   src={career.image}
                   alt=""
                   fill
+                  decoding="async"
                   sizes="(max-width: 600px) 85vw, 25vw"
                 />
                 <div className="photo-shade" />
@@ -256,8 +230,8 @@ export default function Home() {
             <br />A clearer direction.
           </h2>
           <p>
-            Not sure which business career feels like you? Answer five quick
-            questions and explore a path that fits before choosing ABM at OLLCF.
+            Not sure which path fits you? Answer five quick questions to find
+            your match.
           </p>
           <div className="quiz-home-actions">
             <ButtonLink href="/quiz/" variant="light" className="button-pill">
@@ -328,6 +302,7 @@ export default function Home() {
                 src={galleryItems[0].image}
                 alt={galleryItems[0].alt}
                 fill
+                decoding="async"
                 style={{ objectPosition: galleryItems[0].objectPosition }}
                 sizes="(max-width: 700px) 65vw, 22vw"
               />
@@ -342,6 +317,7 @@ export default function Home() {
                   src={item.image}
                   alt={item.alt}
                   fill
+                  decoding="async"
                   style={{ objectPosition: item.objectPosition }}
                   sizes="(max-width: 700px) 30vw, 12vw"
                 />
@@ -357,7 +333,7 @@ export default function Home() {
             linkLabel="All resources"
           />
           <p className="section-copy">
-            Free OLLCF admissions &amp; ABM study guides.
+            Free admissions and ABM study guides.
           </p>
           <div className="resource-mini-list">
             {resources.slice(0, 3).map((resource) => (

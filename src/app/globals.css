@@ -545,7 +545,7 @@ h2:focus {
   background: var(--brand-dark);
   color: white;
   overflow: hidden;
-  min-height: 600px;
+  min-height: 540px;
 }
 
 .hero-image {
@@ -569,15 +569,15 @@ h2:focus {
 
 .hero-inner {
   position: relative;
-  min-height: 600px;
+  min-height: 540px;
   display: flex;
   align-items: center;
-  padding-block: 72px;
+  padding-block: 68px;
 }
 
 .hero-content {
   width: 100%;
-  max-width: 600px;
+  max-width: 520px;
   min-width: 0;
   position: relative;
 }
@@ -586,26 +586,17 @@ h2:focus {
   font-size: clamp(44px, 5.2vw, 68px);
   line-height: 1.06;
   letter-spacing: -0.04em;
-  margin: 0 0 22px;
+  margin: 0 0 18px;
   font-weight: 800;
   text-shadow: 0 2px 18px rgba(7, 13, 30, 0.35);
 }
 
-.hero-definition {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 14px;
-  color: #f4f7ff;
-  text-shadow: 0 1px 12px rgba(7, 13, 30, 0.32);
-}
-
 .hero-description {
-  max-width: 470px;
-  font-size: 16px;
-  line-height: 1.75;
+  max-width: 440px;
+  font-size: 17px;
+  line-height: 1.65;
   color: #e6eefc;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
   text-shadow: 0 1px 10px rgba(7, 13, 30, 0.28);
 }
 
@@ -615,74 +606,14 @@ h2:focus {
   gap: 14px;
 }
 
-.hero-footnote {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 34px;
-  color: #cfe0f8;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.mini-icon {
-  display: flex;
-}
-
-.hero-floating {
-  position: absolute;
-  right: 0;
-  bottom: 44px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  color: var(--ink);
-  box-shadow: 0 14px 36px rgba(12, 24, 58, 0.16);
-  border-radius: 16px;
-  min-width: 340px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.hero-floating:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 42px rgba(12, 24, 58, 0.22);
-}
-
-.floating-icon {
-  width: 46px;
-  height: 46px;
-  background: var(--tint);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--brand);
-  flex-shrink: 0;
-}
-
-.hero-floating strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
-}
-
-.hero-floating div > span {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
-.floating-arrow {
-  margin-left: auto;
-  color: var(--brand);
-  display: flex;
+.careers-home,
+.quiz-home,
+.spotlights-section,
+.home-bottom,
+.officers-section,
+.student-work-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
 }
 
 .promise-bar {
@@ -3479,7 +3410,7 @@ progress::-moz-progress-bar {
   }
   .hero,
   .hero-inner {
-    min-height: 640px;
+    min-height: 580px;
   }
   .career-photo-card {
     height: 330px;
@@ -3605,13 +3536,7 @@ progress::-moz-progress-bar {
   }
   .hero,
   .hero-inner {
-    min-height: 560px;
-  }
-  .hero-floating {
-    position: static;
-    margin-top: 32px;
-    min-width: 0;
-    max-width: 390px;
+    min-height: 480px;
   }
   .hero-inner {
     flex-direction: column;
@@ -4264,21 +4189,6 @@ progress::-moz-progress-bar {
   .hero-actions {
     width: 100%;
   }
-  .hero-footnote {
-    margin-top: 24px;
-    align-items: flex-start;
-  }
-  .hero-floating {
-    width: 100%;
-    max-width: 100%;
-    padding: 16px 18px;
-    gap: 14px;
-    margin-top: 24px;
-  }
-  .hero-floating > div {
-    min-width: 0;
-    flex: 1;
-  }
   .quiz-home {
     padding: 30px 22px;
     margin-block: 44px;
@@ -4399,7 +4309,6 @@ progress::-moz-progress-bar {
     transition: none !important;
   }
   .button:hover,
-  .hero-floating:hover,
   .gallery-card:hover {
     transform: none;
   }

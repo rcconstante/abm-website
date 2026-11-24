@@ -14,8 +14,8 @@ import {
   Icon,
   QuizCallout,
   ButtonLink,
-  StudentSpotlights,
 } from "./ui";
+import { StudentSpotlights } from "./student-spotlights";
 
 export function AboutPage() {
   return (

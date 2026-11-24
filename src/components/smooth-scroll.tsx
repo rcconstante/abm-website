@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis";
+import type Lenis from "lenis";
 
 export function SmoothScroll() {
   const pathname = usePathname();
@@ -12,29 +12,41 @@ export function SmoothScroll() {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    if (prefersReducedMotion) return;
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    if (prefersReducedMotion || !finePointer) return;
 
-    const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 1.5,
-      anchors: {
-        offset: -104,
-      },
-    });
-    lenisRef.current = lenis;
+    let cancelled = false;
+    let instance: Lenis | null = null;
 
-    let rafId = 0;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = window.requestAnimationFrame(raf);
-    }
-    rafId = window.requestAnimationFrame(raf);
+    const init = () => {
+      void import("lenis").then(({ default: LenisCtor }) => {
+        if (cancelled) return;
+        instance = new LenisCtor({
+          duration: 1.05,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          autoRaf: true,
+          anchors: {
+            offset: -104,
+          },
+        });
+        lenisRef.current = instance;
+      });
+    };
+
+    const idleId =
+      typeof window.requestIdleCallback === "function"
+        ? window.requestIdleCallback(init, { timeout: 1500 })
+        : window.setTimeout(init, 250);
 
     return () => {
-      window.cancelAnimationFrame(rafId);
-      lenis.destroy();
+      cancelled = true;
+      if (typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      } else {
+        window.clearTimeout(idleId);
+      }
+      instance?.destroy();
       lenisRef.current = null;
     };
   }, []);

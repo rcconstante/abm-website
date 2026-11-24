@@ -15,12 +15,13 @@ export function SchoolLogo({
       style={{ width: size, height: size }}
     >
       <Image
-        src="/images/Ourladyoflourdes/logo.png"
+        src="/images/Ourladyoflourdes/logo.webp"
         alt="Our Lady of Lourdes College Foundation official seal"
         width={size}
         height={size}
         className="school-logo-img"
-        priority
+        priority={!isDark}
+        decoding="async"
       />
     </span>
   );
