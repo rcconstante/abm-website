@@ -567,18 +567,6 @@ h2:focus {
   );
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 560px;
-  height: 560px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  left: -260px;
-  bottom: -220px;
-  z-index: -1;
-}
-
 .hero-inner {
   position: relative;
   min-height: 600px;
