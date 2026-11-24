@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ollcf.edu.ph"),
+  metadataBase: new URL("https://ollcf-abm.vercel.app"),
   title: {
     default: "ABM Strand — Our Lady of Lourdes College Foundation",
     template: "%s | OLLCF ABM Strand",
