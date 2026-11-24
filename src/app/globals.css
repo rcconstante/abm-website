@@ -21,6 +21,8 @@
 
 html {
   scroll-padding-top: 104px;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 html.lenis {
@@ -35,8 +37,14 @@ body {
   background: var(--paper);
   font-size: 16px;
   line-height: 1.65;
+  overflow-x: clip;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+main {
+  overflow-x: clip;
 }
 
 a {
@@ -561,7 +569,9 @@ h2:focus {
 }
 
 .hero-content {
+  width: 100%;
   max-width: 600px;
+  min-width: 0;
   position: relative;
 }
 
@@ -1277,7 +1287,8 @@ h2:focus {
 
 .breadcrumbs {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px 10px;
   font-size: 13px;
   color: var(--muted);
   margin-bottom: 28px;
@@ -3541,6 +3552,21 @@ progress::-moz-progress-bar {
   .desktop-nav {
     display: none;
   }
+  .header-quiz {
+    display: none;
+  }
+  .brand {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  .brand-text {
+    min-width: 0;
+  }
+  .brand small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .menu-button {
     display: flex;
     align-items: center;
@@ -3853,6 +3879,7 @@ progress::-moz-progress-bar {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: 100%;
   padding: 7px 14px;
   margin-bottom: 20px;
   border-radius: 9999px;
@@ -3861,6 +3888,7 @@ progress::-moz-progress-bar {
   color: #f6d57a;
   font-size: 13px;
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: 0.01em;
   backdrop-filter: blur(8px);
 }
@@ -4017,7 +4045,134 @@ progress::-moz-progress-bar {
   }
 }
 
+/* Grid & Flex Overflow Safety */
+.home-about > *,
+.home-bottom > *,
+.two-grid > *,
+.three-grid > *,
+.gallery-grid > *,
+.officers-grid > *,
+.contact-layout > *,
+.career-detail-grid > *,
+.about-page-lead > *,
+.about-fit > *,
+.story-pager > *,
+.campus-map-facts > *,
+.gallery-home-mosaic > * {
+  min-width: 0;
+}
+
+.contact-detail > div,
+.event-mini > div,
+.resource-card > div,
+.external-resource > div,
+.campus-map-fact > div,
+.spotlight-author > div,
+.story-byline > div {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.contact-detail a,
+.footer-bottom p,
+.campus-map-fact span {
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 700px) {
+  .header-inner {
+    gap: 12px;
+  }
+  .button {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 9.5vw, 48px);
+  }
+  .hero-school-pill {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .hero-actions {
+    width: 100%;
+  }
+  .hero-floating {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+  .quiz-home {
+    padding: 32px 22px;
+    margin-block: 48px;
+    border-radius: 18px;
+  }
+  .quiz-home-deco {
+    font-size: 240px;
+    right: 12px;
+    top: -40px;
+  }
+  .quiz-callout {
+    padding: 28px 22px;
+    border-radius: 18px;
+  }
+  .detail-card,
+  .spotlight-card,
+  .work-card-body,
+  .career-detail-body {
+    padding: 24px 20px;
+  }
+  .about-page-image {
+    min-height: 280px;
+  }
+  .about-page-image > span {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .page-intro {
+    padding-block: 32px 44px;
+  }
+  .page-intro h1 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+  .intro-watermark {
+    font-size: 170px;
+    bottom: -40px;
+    right: -8px;
+  }
+  .study-tip {
+    padding: 8px 0;
+  }
+  .announcement {
+    padding: 26px 22px;
+  }
+  .gallery-card-caption {
+    padding: 20px;
+  }
+  .story-title {
+    font-size: clamp(26px, 7.2vw, 36px);
+  }
+  .story-hero-figure {
+    margin: 28px 0 32px;
+  }
+  .story-hero-frame {
+    border-radius: 16px;
+  }
+  .story-prose blockquote {
+    padding: 18px 20px;
+    font-size: 16px;
+  }
+  .story-prose table {
+    font-size: 14px;
+  }
+  .footer-bottom p {
+    line-height: 1.6;
+  }
   .officers-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
@@ -4027,6 +4182,30 @@ progress::-moz-progress-bar {
   }
   .officer-card-meta strong {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+  .subject-mini-grid {
+    grid-template-columns: 1fr;
+  }
+  .officers-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-home-mosaic {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 190px 130px;
+  }
+  .mosaic-large {
+    grid-row: span 1;
+    grid-column: 1 / -1;
+  }
+  .hero-actions .button {
+    width: 100%;
   }
 }
 

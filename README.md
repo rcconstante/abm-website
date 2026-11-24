@@ -1,38 +1,24 @@
-# ABM Strand — Westbridge Senior High Website
+# ABM Strand — Our Lady of Lourdes College Foundation (OLLCF) Senior High School
 
-> **Building Future Entrepreneurs, Accountants, and Corporate Leaders.**
+> **Here at OLLCF, Your Future is our Concern.** · *Quality · Excellence · Success*
 
-A complete, responsive, nine-page **Accountancy, Business, and Management (ABM)** Senior High School informational web application built with **Next.js 16 (App Router)**, **React 19**, **strict TypeScript**, **Hugeicons**, **Inter**, and **Lenis smooth scrolling**.
+An informative, responsive **Accountancy, Business, and Management (ABM)** Senior High School web application personalized for **Our Lady of Lourdes College Foundation (OLLCF)** in Daet, Camarines Norte and the **Association of Young Business Leaders (AYBL)**.
 
-Designed to meet 100% of the **SHS Website Project (ABM Strand)** functional requirements and grading rubric — combining clean academic branding, interactive tools, downloadable study & admissions resources, student business simulation write-ups, and an accessible campus inquiry/tour flow.
+Built with **Next.js 16 (App Router, static export)**, **React 19**, **strict TypeScript**, **Hugeicons**, **Inter**, **Lenis smooth scrolling**, and **Markdown storytelling (`react-markdown` + `remark-gfm`)** — designed for incoming Grade 11 Lourdenians, parents, and students exploring ABM while meeting 100% of the **SHS Website Project (ABM Strand)** rubric.
 
 ---
 
-## Website Preview
+## School & Organization Identity
 
-### Homepage & Hero
-![ABM Strand Homepage](docs/screenshots/home.png)
-
-### Student Success & Spotlights
-![Student Success & Spotlights](docs/screenshots/spotlights.png)
-
-### Career Pathways & Visual Roadmap
-![Career Pathways](docs/screenshots/careers.png)
-
-### Business Simulation Highlights & Student Work Showcase
-![Business Simulation Highlights and Student Work Showcase](docs/screenshots/showcase.png)
-
-### Interactive 5-Question Career Quiz
-![Interactive Career Quiz](docs/screenshots/quiz.png)
-
-### Upcoming Events Calendar (Filterable)
-![Upcoming Events Calendar](docs/screenshots/events.png)
-
-### Learning Resources, Enrollment Guide & FAQs
-![Learning Resources and SHS Enrollment Guide](docs/screenshots/resources.png)
-
-### Contact & Campus Tour Request Form
-![Contact and Campus Tour Inquiry Form](docs/screenshots/contact.png)
+- **School:** Our Lady of Lourdes College Foundation (OLLCF) — Senior High School
+- **Location:** 4WFV+H24, Vinzons Ave, Gahonon, Daet, 4600 Camarines Norte
+- **Student Organization:** Association of Young Business Leaders (AYBL) · Adviser: Ms. Blossom L. Dionela
+- **Contact:** `(054) 721 1368` · `0948 180 1434` · `information.ollcf@gmail.com`
+- **Official Pages:**
+  - [Our Lady of Lourdes College Foundation (Facebook)](https://www.facebook.com/share/18g81mh4y9/?mibextid=wwXIfr)
+  - [OLLCF Senior High School (Facebook)](https://www.facebook.com/share/1BrF27ubuq/?mibextid=wwXIfr)
+  - [Association of Young Business Leaders — AYBL (Facebook)](https://www.facebook.com/share/1CDaHK4HhV/?mibextid=wwXIfr)
+  - [OLLCF Official Instagram (`@ollcfofficial`)](https://www.instagram.com/ollcfofficial/)
 
 ---
 
@@ -40,44 +26,46 @@ Designed to meet 100% of the **SHS Website Project (ABM Strand)** functional req
 
 | Section | Requirement | Implementation |
 | :--- | :--- | :--- |
-| **1. Homepage & Overview** | ABM tagline, visual banner, interactive navigation tiles | Full-bleed editorial campus banner, ABM tagline (*"Building Future Entrepreneurs, Accountants, and Corporate Leaders."*), custom SVG school crest logo, 14px navigation bar, pill CTA, and interactive tiles for subjects, careers, quiz, events, gallery, and downloads. |
-| **2. ABM Strand Content** | Core & Specialized Subjects | 12 subjects organized across **Specialized (8)**, **Applied (2)**, and **Core (2)** learning areas with topic checklists and anchor jump links. |
-| | Business Simulation Highlights | Filterable showcase in `/gallery/#student-work` featuring student mini-businesses (*Kape Kalye Cold Brew Co.*), feasibility proposals (*EcoPack Campus Refill Station*), student articles, and project posters with financial metrics and takeaways. |
-| | Career Pathways | 4-step Senior High-to-Career visual roadmap + 6 detailed pathways (**Accountancy**, **Management**, **Marketing**, **Entrepreneurship**, **Finance & Banking**, **Human Resources**) with degree options, job roles, skills, and unique editorial photography. |
-| | Student Success & Spotlights | Authentic ABM student quotes and project achievement cards featured on both Home (`/`) and About (`/about/`). |
-| **3. Student Resources & Tools** | Downloadable Guides & Templates | 5 free no-account downloads in `public/resources/`: **SHS Enrollment & Requirements Guide**, **ABM Starter Study Guide**, **Subject & Skills Checklist**, **Student Budget Template (CSV)**, and **College Preparation Checklist**. |
-| | Interactive Career Quiz | Rule-based 5-question career interest explorer (`/quiz/`) with live progress bar, deterministic tie handling, visual interest breakdown, degree recommendations, and 9 automated unit tests. |
-| | Study Tips & FAQs | Practical study habits, official DepEd/BSP/DTI links, and expandable FAQ accordions covering math difficulty, **workload & balancing projects**, curriculum, and college prep. |
-| **4. Community & Admissions** | Upcoming Events Calendar | Filterable 6-event campus calendar (`/events/`) covering **Business Expo**, **SHS Research Congress**, **Early Enrollment & Voucher Deadline**, **Young Entrepreneurs Webinar**, **Financial Literacy Seminar**, and **Career Orientation**. |
-| | Student Work Showcase & Photo Gallery | 6-photo campus gallery with category filters and accessible native `<dialog>` lightbox (arrow keys, Escape, backdrop close) paired with the Student Work Showcase. |
-| | Contact & Campus Tour Form | Inquiry form (`/contact/`) supporting Prospective Students, Parents/Guardians, and Teachers, with conditional **Preferred Visit Date & Time Slot** fields when `"Request a campus tour"` is selected, plus `mailto:` draft, clipboard copy, and `.txt` download. |
+| **1. Homepage & Overview** | ABM tagline, visual banner, interactive navigation tiles | Full-bleed hero banner with natural student photography, OLLCF official transparent seal (`public/images/Ourladyoflourdes/logo.png`), Royal Blue & Gold theme, responsive navigation with mobile drawer, and interactive previews for subjects, careers, quiz, spotlights, events, gallery, and PDF guides. |
+| **2. ABM Strand Content** | Core & Specialized Subjects | 12 subjects organized across **Specialized (8)**, **Applied (2)**, and **Core (2)** learning areas with topic checklists and anchor jump links (`/subjects/`). |
+| | Enterprise & AYBL Program Highlights | Filterable showcase in `/gallery/#student-work` highlighting the **OLLCF SHS Food Bazaar 2026**, **AYBL Leadership**, **Intramurals 2026 Pride**, and **Class 2026 Tribute**, paired with the full **20-officer AYBL roster** (`/gallery/#aybl-officers`). |
+| | Career Pathways | 4-step Senior High-to-Career visual roadmap + 6 detailed pathways (**Accountancy**, **Management**, **Marketing**, **Entrepreneurship**, **Finance & Banking**, **Human Resources**) with degree options, job roles, and skills (`/careers/`). |
+| | Student Success & Spotlights | Real AYBL student spotlights celebrating OLLCF Intramurals 2026 winners (Rey Kenneth Odasco, Evangeline Jazz Reema Ibasco, Shane Rafael, Cristel B. Aguas) featured on Home (`/`) and About (`/about/`). |
+| **3. Student Resources & Tools** | Branded PDF Guides & Worksheets | 5 original, branded OLLCF PDFs in `public/resources/` configured to open inline in a new browser tab (`_headers`): **OLLCF SHS Enrollment & Requirements Guide**, **ABM Starter Study Guide**, **Subject & Skills Checklist**, **Student Budget Planner Worksheet**, and **College Preparation Checklist**. |
+| | Interactive Career Quiz | Deterministic 5-question career interest matcher (`/quiz/`) with progress indicator, tie-breaking explanation, interest breakdown bars, degree recommendations, and automated unit tests. |
+| | Study Tips & FAQs | Practical study habits, official OLLCF / DepEd / BSP links, and expandable FAQ accordions covering ABM math expectations, enrollment requirements, AYBL involvement, workload balance, and college pathways (`/resources/`). |
+| **4. Community & Admissions** | Upcoming Events Calendar | Filterable 6-event SY 2026–2027 campus calendar (`/events/`) featuring **OLLCF SHS Food Bazaar 2026**, **SHS Pre-Registration**, **ABM Career Orientation**, **Enterprise Simulation & Research Showcase**, **AYBL General Assembly**, and **Mr. & Ms. Intramurals 2026**. |
+| | Student Showcase & Blog Stories | Filterable showcase (`/gallery/`) linking to **12 dedicated editorial story pages** (`/gallery/<slug>/`) with large full-clarity photo framing, conversational humanized **Markdown** articles (`react-markdown` + `remark-gfm`), previous/next story navigation, and related moments. |
+| | Contact, Campus Visit & Google Map | Student/parent inquiry & campus visit request form with conditional date/time fields, `mailto:` draft, clipboard copy, `.txt` download, and an embedded interactive **Google Map** for OLLCF along Vinzons Ave, Daet (`/contact/`). |
 
 ---
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 (App Router, static export via `output: "export"`)
-- **UI & Language**: React 19, TypeScript 5.9 (`strict`)
-- **Icons**: Hugeicons (`@hugeicons/react` + `@hugeicons/core-free-icons`)
-- **Typography**: Self-hosted Inter (`@fontsource/inter`, weights 400–800)
-- **Smooth Scrolling**: Lenis (`lenis`) with `prefers-reduced-motion` support and sticky-header anchor offsets
-- **Testing & QA**: Node/TSX unit tests (`src/lib/quiz.test.ts`) + static export link/asset validator (`scripts/check-export.mjs`)
+- **Framework:** Next.js 16 (App Router, static export via `output: "export"`)
+- **UI & Language:** React 19, TypeScript 5.9 (`strict`)
+- **Markdown Rendering:** `react-markdown` + `remark-gfm`
+- **Icons:** Hugeicons (`@hugeicons/react` + `@hugeicons/core-free-icons`)
+- **Typography:** Self-hosted Inter (`@fontsource/inter`, weights 400–800)
+- **Smooth Scrolling:** Lenis (`lenis`) with `prefers-reduced-motion` support and sticky-header offsets
+- **Testing & QA:** Node/TSX unit tests (`src/lib/*.test.ts`) + static export validator (`scripts/check-export.mjs`)
 
 ---
 
-## Pages & Routes
+## Pages & Routes (21 Static Pages)
 
 | Route | Purpose |
 | :--- | :--- |
-| `/` | Homepage — Hero, ABM value strip, About preview, Subject tiles, Career cards, Career Quiz callout, Student Spotlights, Events/Gallery/Resources previews |
-| `/about/` | About ABM — Strand overview, life skills, student fit checklist, Student Spotlights |
+| `/` | Homepage — Hero, value strip, About preview, Subject tiles, Career cards, Career Quiz banner, AYBL Student Spotlights, Events/Gallery/Resources previews |
+| `/about/` | About ABM — OLLCF ABM overview, life skills, incoming Grade 11 checklist, Student Spotlights |
 | `/subjects/` | ABM Subjects — Specialized, Applied, and Core subjects with jump navigation & topic breakdowns |
 | `/careers/` | Career Pathways — 4-step roadmap + 6 business tracks with degrees, job roles, and skills |
-| `/resources/` | Learning Resources — 5 downloadable guides/templates, study habits, DepEd/BSP/DTI links, and FAQ accordions |
-| `/events/` | Events & Updates — Filterable 6-event campus calendar with expandable event details |
-| `/gallery/` | Student Showcase — Filterable photo gallery with lightbox + Business Simulation & Student Work Showcase |
-| `/quiz/` | Interactive Career Quiz — 5-question interest matcher with breakdown bars and college degree suggestions |
-| `/contact/` | Get in Touch — Admissions contact details + student/parent inquiry & campus tour request form |
+| `/resources/` | Learning Resources — 5 inline-view OLLCF PDF guides, study tips, official OLLCF/DepEd/BSP links, and FAQs |
+| `/events/` | Events & Updates — Filterable 6-event SY 2026–2027 calendar with expandable details |
+| `/gallery/` | Student Showcase — Filterable story journal, 20 newly elected AYBL officers, and program highlights |
+| `/gallery/[slug]/` | 12 dedicated blog/story pages rendered from Markdown with large featured photos and prev/next navigation |
+| `/quiz/` | Interactive Career Quiz — 5-question interest matcher with breakdown bars and degree suggestions |
+| `/contact/` | Get in Touch — OLLCF Daet contact info, inquiry/campus-visit form, official social links, and embedded Google Map |
 
 ---
 
@@ -90,7 +78,7 @@ npm run dev
 
 Open [http://127.0.0.1:3417](http://127.0.0.1:3417).
 
-### Production Build & Validation
+### Production Build & Verification
 
 ```bash
 npm run typecheck
@@ -100,28 +88,17 @@ node scripts/check-export.mjs
 npm run preview
 ```
 
-The static production build outputs to `out/` and deploys cleanly to static hosts such as **GitHub Pages**, **Cloudflare Pages**, or **Vercel**.
+The static production build outputs to `out/` and deploys cleanly to **Cloudflare Pages**, **Vercel**, **Netlify**, or **GitHub Pages** with no environment variables required.
 
 ---
 
-## Customizing School Details
+## Key Project Files
 
-Copy `.env.example` to `.env.local` and override any public school identity fields:
-
-```env
-NEXT_PUBLIC_SCHOOL_NAME=Westbridge Senior High
-NEXT_PUBLIC_CONTACT_EMAIL=abm.admissions@westbridgeshs.edu.ph
-NEXT_PUBLIC_SCHOOL_ADDRESS=428 Maplecrest Avenue, Brgy. San Isidro, Quezon City, Metro Manila 1109
-NEXT_PUBLIC_SCHOOL_URL=https://westbridgeshs.edu.ph
-```
-
-Key content files:
-- `src/lib/site.ts` — School identity, contact profile, and top navigation
-- `src/lib/content.ts` — Subjects, careers, student spotlights, student work showcase, gallery, events, downloadable resources, and FAQs
-- `src/lib/quiz.ts` — Career quiz questions and scoring engine
-- `src/components/school-logo.tsx` — Custom SVG collegiate crest logo
-- `src/app/globals.css` — Design tokens, spacing scale, and responsive breakpoints
-
----
-
-*Note: Westbridge Senior High and its sample dates, contact details, student spotlights, and AI-generated editorial campus imagery (`public/image-prompts.md`) are illustrative demo content created for this Senior High School ABM website project.*
+- `src/lib/site.ts` — OLLCF identity, contact details, Google Map links, social URLs, and navigation
+- `src/lib/content.ts` — Subjects, careers, spotlights, AYBL officers, events, student works, PDF resources, and FAQs
+- `src/lib/gallery-stories.ts` — 12 detailed conversational Markdown stories for `/gallery/[slug]/`
+- `src/components/gallery-story.tsx` — Markdown blog article layout (`react-markdown` + `remark-gfm`)
+- `src/components/contact.tsx` — Inquiry/campus-visit form and interactive OLLCF Google Map
+- `src/components/school-logo.tsx` — Transparent OLLCF official seal component
+- `src/app/globals.css` — Royal Blue & Gold design tokens, Markdown prose typography, and responsive layouts
+- `public/resources/*.pdf` — Branded OLLCF ABM PDF guides and worksheets
