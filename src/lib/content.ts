@@ -371,12 +371,12 @@ export const galleryItems: readonly GalleryItem[] = [
   },
   {
     id: "kenneth-mr-intramurals-2026",
-    title: "Rey Kenneth Odasco — Mr. Intramurals 2026 (2nd Runner-Up)",
+    title: "Rey Kenneth C. Dasco — Mr. Intramurals 2026 (2nd Runner-Up)",
     category: "Achievements",
     description:
-      "AYBL President Rey Kenneth Odasco brought pride to the organization as Mr. Intramurals 2026 – 2nd Runner-Up, also earning Mr. Popularity 2026, Best in Sports Attire, Best in School Uniform, and Best in Formal Attire.",
+      "AYBL President Rey Kenneth C. Dasco brought pride to the organization as Mr. Intramurals 2026 – 2nd Runner-Up, also earning Mr. Popularity 2026, Best in Sports Attire, Best in School Uniform, and Best in Formal Attire.",
     image: `${AYBL_IMG}/783778095_122263693628122924_9070735196601345550_n.jpg`,
-    alt: "AYBL President Rey Kenneth Odasco holding his trophy and multiple award sashes at OLLCF Intramurals 2026",
+    alt: "AYBL President Rey Kenneth C. Dasco holding his trophy and multiple award sashes at OLLCF Intramurals 2026",
     objectPosition: "center 18%",
   },
   {
@@ -385,7 +385,7 @@ export const galleryItems: readonly GalleryItem[] = [
     category: "Achievements",
     description:
       "Celebrating AYBL VP for Internal Communication Evangeline Jazz Reema Ibasco, crowned Ms. Intramurals 2026 – 2nd Runner-Up for her confidence, hard work, and dedication on stage.",
-    image: `${AYBL_IMG}/783878169_122263688918122924_4571283520738523469_n.jpg`,
+    image: `${AYBL_IMG}/783904295_122263689326122924_6635205145037462025_n.jpg`,
     alt: "AYBL VP for Internal Communication Evangeline Jazz Reema Ibasco crowned Ms. Intramurals 2026 2nd Runner-Up",
     objectPosition: "center 20%",
   },
@@ -405,7 +405,7 @@ export const galleryItems: readonly GalleryItem[] = [
     category: "Achievements",
     description:
       "Congratulations to AYBL Director for Audit Cristel B. Aguas, crowned Ms. Intramurals 2026 – 3rd Runner-Up—celebrating poise, grit, and Lourdenian pride.",
-    image: `${AYBL_IMG}/783904295_122263689326122924_6635205145037462025_n.jpg`,
+    image: `${AYBL_IMG}/783878169_122263688918122924_4571283520738523469_n.jpg`,
     alt: "AYBL Director for Audit Cristel B. Aguas holding her trophy and flowers as Ms. Intramurals 2026 3rd Runner-Up",
     objectPosition: "center 18%",
   },
@@ -476,8 +476,8 @@ export const ayblOfficers: readonly AyblOfficer[] = [
     image: `${AYBL_IMG}/771468955_122262327188122924_1113879856195972304_n.jpg`,
   },
   {
-    id: "rey-kenneth-odasco",
-    name: "Rey Kenneth Odasco",
+    id: "rey-kenneth-dasco",
+    name: "Rey Kenneth C. Dasco",
     role: "President",
     image: `${AYBL_IMG}/774052989_122262327260122924_2986634991928873828_n.jpg`,
   },
@@ -586,7 +586,7 @@ export const ayblOfficers: readonly AyblOfficer[] = [
   {
     id: "dhenbert-sayno",
     name: "Dhenbert Sayno",
-    role: "TechPro Representative",
+    role: "TechPro 11 Representative",
     image: `${AYBL_IMG}/774033518_122262327692122924_3352053733224885489_n.jpg`,
   },
 ];
@@ -686,7 +686,7 @@ export const events: readonly SchoolEvent[] = [
     category: "Leadership",
     status: "SY 2026–2027 Highlight",
     description:
-      "The torch was passed to the newly elected officers of the Association of Young Business Leaders (AYBL), guided by Adviser Ms. Blossom L. Dionela and President Rey Kenneth Odasco.",
+      "The torch was passed to the newly elected officers of the Association of Young Business Leaders (AYBL), guided by Adviser Ms. Blossom L. Dionela and President Rey Kenneth C. Dasco.",
     details: [
       "Launched the school year's student-led programs focused on business readiness, creativity, audit integrity, and community development.",
       "Brought together executive officers, vice presidents, directors, and TechPro representatives to serve OLLCF SHS learners.",
@@ -704,7 +704,7 @@ export const events: readonly SchoolEvent[] = [
     description:
       "Four AYBL officers proudly represented the organization at OLLCF Intramurals 2026—bringing home 2nd and 3rd Runner-Up crowns plus major special awards.",
     details: [
-      "Rey Kenneth Odasco (AYBL President) — Mr. Intramurals 2026, 2nd Runner-Up & special awardee.",
+      "Rey Kenneth C. Dasco (AYBL President) — Mr. Intramurals 2026, 2nd Runner-Up & special awardee.",
       "Evangeline Jazz Reema Ibasco (VP for Internal Communication) — Ms. Intramurals 2026, 2nd Runner-Up.",
       "Shane Rafael (Director for Public Relations) — Mr. Intramurals 2026, 3rd Runner-Up.",
       "Cristel B. Aguas (Director for Audit) — Ms. Intramurals 2026, 3rd Runner-Up.",
@@ -724,7 +724,7 @@ export interface StudentSpotlight {
 export const studentSpotlights: readonly StudentSpotlight[] = [
   {
     id: "kenneth",
-    name: "Rey Kenneth Odasco",
+    name: "Rey Kenneth C. Dasco",
     role: "AYBL President · OLLCF Senior High School",
     achievement: "Mr. Intramurals 2026 · 2nd Runner-Up",
     highlight:
@@ -738,7 +738,7 @@ export const studentSpotlights: readonly StudentSpotlight[] = [
     achievement: "Ms. Intramurals 2026 · 2nd Runner-Up",
     highlight:
       "Celebrated by the AYBL family for her grace, hard work, and dedication throughout the competition—shining on stage as Ms. Intramurals 2026 2nd Runner-Up.",
-    photo: `${AYBL_IMG}/783878169_122263688918122924_4571283520738523469_n.jpg`,
+    photo: `${AYBL_IMG}/783904295_122263689326122924_6635205145037462025_n.jpg`,
   },
   {
     id: "shane",
@@ -756,7 +756,7 @@ export const studentSpotlights: readonly StudentSpotlight[] = [
     achievement: "Ms. Intramurals 2026 · 3rd Runner-Up",
     highlight:
       "A special milestone for our AYBL Director for Audit—honored as Ms. Intramurals 2026 3rd Runner-Up and celebrated for her poise, commitment, and Lourdenian spirit.",
-    photo: `${AYBL_IMG}/783904295_122263689326122924_6635205145037462025_n.jpg`,
+    photo: `${AYBL_IMG}/783878169_122263688918122924_4571283520738523469_n.jpg`,
   },
 ];
 
@@ -801,7 +801,7 @@ export const studentWorks: readonly StudentWorkItem[] = [
       "The official business leadership organization of OLLCF Senior High School—structured like a real enterprise with dedicated divisions for Finance, Audit, Marketing, Creatives, Events & Logistics, Communications, Membership, and Community Development.",
     highlight: "Passing the torch of principled student leadership",
     metrics: [
-      "Executive board led by President Rey Kenneth Odasco & EVP John Ruzzel Velez",
+      "Executive board led by President Rey Kenneth C. Dasco & EVP John Ruzzel Velez",
       "Real organizational roles mirroring corporate & startup teams",
       "Active campus assemblies, creative campaigns, and student events",
     ],
@@ -819,7 +819,7 @@ export const studentWorks: readonly StudentWorkItem[] = [
       "ABM and AYBL learners prove that business students excel both in academics and on stage—with four AYBL officers winning major placements and special awards at OLLCF Intramurals 2026.",
     highlight: "4 Crowned Finalists · Multiple Special Awards",
     metrics: [
-      "2nd Runners-Up: Rey Kenneth Odasco & Evangeline Jazz Reema Ibasco",
+      "2nd Runners-Up: Rey Kenneth C. Dasco & Evangeline Jazz Reema Ibasco",
       "3rd Runners-Up: Shane Rafael & Cristel B. Aguas",
       "Showcased public speaking, composure, and strong team support",
     ],

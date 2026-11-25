@@ -131,7 +131,7 @@ One of the coolest things about AYBL at OLLCF is that it isn't just a president 
 
 | Division | What the officers handle |
 | --- | --- |
-| **Executive Leadership** | Overall direction, student advocacy, and coordination led by President **Rey Kenneth Odasco**, EVP **John Ruzzel Velez**, and Executive Secretary **Lea Joy Abarca** |
+| **Executive Leadership** | Overall direction, student advocacy, and coordination led by President **Rey Kenneth C. Dasco**, EVP **John Ruzzel Velez**, and Executive Secretary **Lea Joy Abarca** |
 | **Finance & Audit** | Budgeting, transparent record-keeping, and checks led by **Kaycee Louise Maravillas** (VP for Finance) and **Cristel B. Aguas** (Director for Audit) |
 | **Marketing, Creatives & Social Media** | Campus campaigns, posters, storytelling, and visuals led by **Abigail Marte**, **Ma. Jiecel Najera**, **Cristine Ann Ubana**, and **Rayzel Diaz** |
 | **Communications & Public Relations** | Internal & external coordination led by **Evangeline Jazz Reema Ibasco**, **Rencess P. Canlas**, **Shane Rafael**, and **Frances Ann Ang** |
@@ -157,19 +157,19 @@ Want to put faces to all twenty names? Scroll through the full officer roster on
   "kenneth-mr-intramurals-2026": {
     id: "kenneth-mr-intramurals-2026",
     subtitle:
-      "AYBL President Rey Kenneth Odasco stepped onto the Intramurals stage and walked away with 2nd Runner-Up — plus four major special awards.",
+      "AYBL President Rey Kenneth C. Dasco stepped onto the Intramurals stage and walked away with 2nd Runner-Up — plus four major special awards.",
     dateLabel: "OLLCF Intramurals 2026",
     readTime: "3 min read",
     location: "Our Lady of Lourdes College Foundation, Daet",
     author: "AYBL Editorial Team",
     caption:
-      "AYBL President Rey Kenneth Odasco beaming with his Mr. Intramurals 2026 trophy and multiple special award sashes.",
+      "AYBL President Rey Kenneth C. Dasco beaming with his Mr. Intramurals 2026 trophy and multiple special award sashes.",
     imageWidth: 1080,
     imageHeight: 1440,
     imageStyle: "portrait",
     markdown: `It's one thing to lead meetings and plan student activities behind a desk. It's another thing entirely to walk out under campus stage lights in front of hundreds of cheering Lourdenians and represent your organization with total composure.
 
-Our very own AYBL President, **Rey Kenneth Odasco**, did both — and made the entire ABM and AYBL family proud by being crowned **Mr. Intramurals 2026 – 2nd Runner-Up**.
+Our very own AYBL President, **Rey Kenneth C. Dasco**, did both — and made the entire ABM and AYBL family proud by being crowned **Mr. Intramurals 2026 – 2nd Runner-Up**.
 
 > "Your dedication, confidence, and outstanding performance have brought pride to our organization. Keep shining and inspiring others, Mr. President!"
 
@@ -206,8 +206,8 @@ Congratulations again, Kenneth! Thank you for showing incoming students that Lou
     author: "AYBL Editorial Team",
     caption:
       "AYBL VP for Internal Communication Evangeline Jazz Reema Ibasco celebrated as Ms. Intramurals 2026 – 2nd Runner-Up.",
-    imageWidth: 1080,
-    imageHeight: 1440,
+    imageWidth: 443,
+    imageHeight: 590,
     imageStyle: "portrait",
     markdown: `Anyone who has worked with **Evangeline Jazz Reema Ibasco** inside AYBL knows she's the kind of person who keeps people connected — making sure messages are clear, teammates feel included, and details don't slip through the cracks.
 
@@ -276,8 +276,8 @@ Huge congratulations once again, Shane!`,
     author: "AYBL Editorial Team",
     caption:
       "AYBL Director for Audit Cristel B. Aguas with her trophy and bouquet after being crowned Ms. Intramurals 2026 – 3rd Runner-Up.",
-    imageWidth: 443,
-    imageHeight: 590,
+    imageWidth: 1080,
+    imageHeight: 1440,
     imageStyle: "portrait",
     markdown: `There's an old stereotype that audit and accounting folks just sit quietly in the corner checking receipts. **Cristel B. Aguas**, our AYBL Director for Audit, happily broke that stereotype into pieces at OLLCF Intramurals 2026.
 
@@ -391,7 +391,7 @@ This backstage snapshot captures the **AYBL family** celebrating right after **M
 
 | AYBL Representative | Organization Role | Intramurals 2026 Honor |
 | --- | --- | --- |
-| **Rey Kenneth Odasco** | President | Mr. Intramurals 2026 — 2nd Runner-Up & 4 Special Awards |
+| **Rey Kenneth C. Dasco** | President | Mr. Intramurals 2026 — 2nd Runner-Up & 4 Special Awards |
 | **Evangeline Jazz Reema Ibasco** | VP for Internal Communication | Ms. Intramurals 2026 — 2nd Runner-Up |
 | **Shane Rafael** | Director for Public & Internal Relations | Mr. Intramurals 2026 — 3rd Runner-Up |
 | **Cristel B. Aguas** | Director for Audit | Ms. Intramurals 2026 — 3rd Runner-Up |
@@ -424,7 +424,7 @@ When you hear Lourdenians talk about school spirit at OLLCF, this exact moment i
     imageStyle: "portrait",
     markdown: `At first glance, this is a simple snapshot of white-and-gold sashes laid out after a busy night. Look a little closer, though, and each ribbon tells a story of preparation, pride, and community support.
 
-Earned by AYBL President **Rey Kenneth Odasco** during **OLLCF Intramurals 2026**, these sashes represent excellence across multiple categories:
+Earned by AYBL President **Rey Kenneth C. Dasco** during **OLLCF Intramurals 2026**, these sashes represent excellence across multiple categories:
 
 - **Mr. Intramurals 2026 — 2nd Runner-Up**
 - **Mr. Popularity 2026**
